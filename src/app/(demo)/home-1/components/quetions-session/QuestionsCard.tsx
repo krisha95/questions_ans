@@ -1,10 +1,11 @@
 import React from 'react'
 import avatar3 from "@/assets/images/avatar/03.jpg"
 import Image from 'next/image'
-import { BsFillBookmarkFill, BsFillEyeFill, BsFillHandThumbsUpFill, BsFillPatchCheckFill, BsHandThumbsDownFill } from 'react-icons/bs'
+import { BsFillBookmarkFill, BsFillEyeFill, BsFillHandThumbsUpFill, BsFillPatchCheckFill, BsGeo, BsGlobe2, BsHandThumbsDownFill, BsPatchCheck } from 'react-icons/bs'
+import avtar3 from "@/assets/images/avatar/03.jpg"
 import Link from 'next/link'
 import { Col, Row } from 'react-bootstrap'
-import { BiBookmark } from 'react-icons/bi'
+import { BiBlock, BiBookmark, BiDotsHorizontalRounded, BiFlag } from 'react-icons/bi'
 import avatar9 from "@/assets/images/avatar/09.jpg"
 
 const QuestionsCard = () => {
@@ -21,47 +22,47 @@ const QuestionsCard = () => {
                             <Link href="#" className="avatar avatar-lg" id="dropdownProfile" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                                 <Image className="avatar-img rounded-circle" src={avatar3} alt="avatar" />
                             </Link>
-                            {/* <div className="dropdown-menu dropdown-menu-size-sm px-3 py-4" aria-labelledby="dropdownProfile">
-                            <div className="d-flex align-items-center">
-                                <div className="avatar flex-shrink-0">
-                                    <img className="avatar-img rounded-circle" src="assets/images/avatar/03.jpg" alt="avatar">
+                            <div className="dropdown-menu dropdown-menu-size-sm px-3 py-4" aria-labelledby="dropdownProfile">
+                                <div className="d-flex align-items-center">
+                                    <div className="avatar flex-shrink-0">
+                                        <Image className="avatar-img rounded-circle" src={avatar3} alt="avatar" />
+                                    </div>
+                                    <div className="ms-3">
+                                        <h6 className="mb-0"><a href="#">Dennis Barrett</a></h6>
+                                        <small>Join: 2 Years ago</small>
+                                    </div>
                                 </div>
-                                <div className="ms-3">
-                                <h6 className="mb-0"><a href="#">Dennis Barrett</a></h6>
-                                <small>Join: 2 Years ago</small>
-                                </div>
-                                </div>
-                                
-                                <ul className="list-group list-group-borderless small mb-0 mt-2">
-                                <li className="list-group-item d-flex mb-0 pt-0">
-                                <i className="bi bi-geo me-2"></i>Live in the USA
-                                </li>
-                                <li className="list-group-item d-flex mb-0 pt-0">
-                                <i className="bi bi-patch-check me-2"></i>Active in 10 Categories
-                                </li>
-                                <li className="list-group-item d-flex mb-0 pt-0">
-                                <i className="bi bi-globe2 me-2"></i>Knows English, French, German
-                                </li>
-                                </ul>
-                                
-                                <div className="d-flex justify-content-between mt-2">
-                                <button className="btn btn-sm btn-primary-soft mb-0"> 15K Follow </button>
-                                
-                                <div className="hstack gap-2">
-                                <a className="btn btn-sm btn-icon btn-light mb-0" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Message"> <i className="bi bi-chat-right-text-fill"></i> </a>
 
-                                    <div className="dropup">
-                                    <a href="#" className="btn btn-sm btn-icon btn-light mb-0" id="friendtActionProfile1" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                                            <i className="bi bi-three-dots"></i>
-                                        </a>
-                                        <ul className="dropdown-menu dropdown-menu-end min-w-auto px-0 py-2" aria-labelledby="friendtActionProfile1">
-                                        <li><a className="dropdown-item small" href="#"> <i className="bi bi-slash-circle-fill fa-fw pe-2"></i>Block </a></li>
-                                            <li><a className="dropdown-item small" href="#"> <i className="bi bi-flag-fill fa-fw pe-2"></i>Report</a></li>
+                                <ul className="list-group list-group-borderless small mb-0 mt-2">
+                                    <li className="list-group-item d-flex mb-0 pt-0">
+                                        <BsGeo className="me-2" />Live in the USA
+                                    </li>
+                                    <li className="list-group-item d-flex mb-0 pt-0">
+                                        <BsPatchCheck className="me-2" />Active in 10 Categories
+                                    </li>
+                                    <li className="list-group-item d-flex mb-0 pt-0">
+                                        <BsGlobe2 className="me-2" />Knows English, French, German
+                                    </li>
+                                </ul>
+
+                                <div className="d-flex justify-content-between mt-2">
+                                    <button className="btn btn-sm btn-primary-soft mb-0"> 15K Follow </button>
+
+                                    <div className="hstack gap-2">
+                                        <Link className="btn btn-sm btn-icon btn-light mb-0" href="#!" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Message"> <i className="bi bi-chat-right-text-fill"></i> </Link>
+
+                                        <div className="dropup">
+                                            <Link href="#" className="btn btn-sm btn-icon btn-light mb-0" id="friendtActionProfile1" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                                <BiDotsHorizontalRounded />
+                                            </Link>
+                                            <ul className="dropdown-menu dropdown-menu-end min-w-auto px-0 py-2" aria-labelledby="friendtActionProfile1">
+                                                <li><Link className="dropdown-item small" href="#"> <BiBlock className="fa-fw pe-2" />Block </Link></li>
+                                                <li><Link className="dropdown-item small" href="#"> <BiFlag className="pe-2" />Report</Link></li>
                                             </ul>
+                                        </div>
                                     </div>
-                                    </div>
+                                </div>
                             </div>
-                            </div> */}
                         </div>
 
                         <div className="btn-group align-items-center" role="group">
@@ -89,14 +90,12 @@ const QuestionsCard = () => {
 
                             <div className="hstack gap-3 mt-4 flex-wrap justify-content-end">
                                 <small><BsFillEyeFill className='me-1' />5K views</small>
-                                <a href="answer-detail.html" className="btn btn-dark mb-0">15 Answers</a>
+                                <Link href="/answer-detail" className="btn btn-dark mb-0">15 Answers</Link>
                             </div>
                         </div>
                     </Col>
                 </Row>
             </div>
-
-
 
             <div className="card dropdown-hover p-4">
 

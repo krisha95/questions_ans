@@ -1,9 +1,7 @@
-import React from 'react'
-import Hero from './components/Hero'
-import { Container, Row } from 'react-bootstrap'
 import LeftSide from '@/component/LeftSide'
+import { Container, Row } from 'react-bootstrap'
+import Hero from './components/Hero'
 import Qutions from './components/Qutions'
-import Hstack from './components/quetions-session/Hstack'
 
 const page = () => {
     return (
@@ -14,7 +12,6 @@ const page = () => {
                     <Row>
                         <LeftSide />
                         <Qutions />
-                        
                     </Row>
                 </Container>
             </section>
