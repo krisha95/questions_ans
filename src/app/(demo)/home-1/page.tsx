@@ -3,6 +3,7 @@ import { Container, Row } from "react-bootstrap";
 import Hero from "./components/Hero";
 import Qutions from "./components/Qutions";
 import RightSideBar from "./components/RightSideBar";
+import Footer from "./components/Footer";
 
 const page = () => {
   return (
@@ -17,6 +18,7 @@ const page = () => {
           </Row>
         </Container>
       </section>
+      <Footer />
     </main>
   );
 };
