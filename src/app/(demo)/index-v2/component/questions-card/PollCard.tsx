@@ -2,12 +2,16 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
-import { Col, Collapse, Dropdown, Row } from "react-bootstrap";
+import { useState } from "react";
+import { Col, Collapse, Row } from "react-bootstrap";
 import {
-    BiDotsHorizontalRounded,
+    BiBookBookmark,
+    BiBookmark,
+    BiDotsHorizontal,
+    BiFlag,
+    BiXCircle
 } from "react-icons/bi";
-import { BsFillCaretUpFill } from "react-icons/bs";
+import { BsFillCaretUpFill, BsSlashCircle } from "react-icons/bs";
 import {
     FaFacebookF,
     FaLinkedinIn,
@@ -17,7 +21,6 @@ import {
     FaXTwitter,
 } from "react-icons/fa6";
 
-// Avatar imports
 import avatar1 from "@/assets/images/avatar/01.jpg";
 import avatar2 from "@/assets/images/avatar/02.jpg";
 import avatar3 from "@/assets/images/avatar/03.jpg";
@@ -29,36 +32,28 @@ import avatar8 from "@/assets/images/avatar/08.jpg";
 import avatar9 from "@/assets/images/avatar/09.jpg";
 import avatar10 from "@/assets/images/avatar/10.jpg";
 import avatar11 from "@/assets/images/avatar/11.jpg";
+import DropdownAction from "@/component/DropdownAction";
 
 const PollCard = () => {
     const [collapseShow, setCollapseShow] = useState(false);
-    const CustomToggle = React.forwardRef(({ onClick }: any, ref: any) => (
-        <button
-            type="button"
-            ref={ref}
-            onClick={(e) => {
-                e.preventDefault();
-                onClick?.(e);
-            }}
-            className="btn btn-light btn-sm btn-round"
-        >
-            <BiDotsHorizontalRounded />
-        </button>
-    ));
+
+    const menuItems = [
+        { label: "Save post", icon: <BiBookmark /> },
+        { label: "Hide post", icon: <BiXCircle /> },
+        { label: "Block", icon: <BsSlashCircle /> },
+        { divider: true },
+        { label: "Report post", icon: <BiFlag /> },
+    ];
 
     return (
         <div className="card p-0 overflow-hidden">
-
-            <Dropdown className="position-absolute end-0 top-0 p-3">
-                <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-1" />
-                <Dropdown.Menu align="end">
-                    <Dropdown.Item href="#">Save post</Dropdown.Item>
-                    <Dropdown.Item href="#">Hide post</Dropdown.Item>
-                    <Dropdown.Item href="#">Block</Dropdown.Item>
-                    <Dropdown.Divider />
-                    <Dropdown.Item href="#">Report post</Dropdown.Item>
-                </Dropdown.Menu>
-            </Dropdown>
+            <DropdownAction
+                items={menuItems}
+                toggleIcon={<BiDotsHorizontal />}
+                wrapperClass="dropdown flex-shrink-0 position-absolute end-0 top-0 p-3"
+                toggleButtonClass="btn btn-sm btn-round btn-light mb-0"
+                menuClass="dropdown-menu dropdown-menu-end"
+            />
 
             {/* Header */}
             <div className="card-header border-0 p-4">
@@ -76,11 +71,9 @@ const PollCard = () => {
                 </div>
             </div>
 
-            {/* Body */}
             <div className="card-body p-4 pt-0">
                 <h5>How do you protect your business against cyber-crime?</h5>
 
-                {/* Poll Options */}
                 <div className="vstack gap-2 mt-3">
                     {["We have cybersecurity insurance coverage", "Our dedicated staff will protect us", "We give regular training for best practices", "Third-party vendor protection"].map((text, i) => (
                         <div key={i}>
@@ -90,7 +83,6 @@ const PollCard = () => {
                     ))}
                 </div>
 
-                {/* Actions */}
                 <div className="hstack gap-3 flex-wrap align-items-start mt-3">
                     <div className="border px-2 py-0 rounded-1 d-flex align-items-center gap-1">
                         <input type="radio" className="btn-check" name="vote10" id="btnradioT10" />

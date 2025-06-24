@@ -1,6 +1,4 @@
 import React from 'react';
-
-// Import images (adjust paths as needed)
 import avatar09 from '@/assets/images/avatar/09.jpg';
 import avatar08 from '@/assets/images/avatar/08.jpg';
 import avatar07 from '@/assets/images/avatar/07.jpg';
@@ -10,7 +8,7 @@ import avatar04 from '@/assets/images/avatar/04.jpg';
 import avatar03 from '@/assets/images/avatar/03.jpg';
 import adImage from '@/assets/images/advertisement/02.jpg';
 import Image from 'next/image';
-import { Col } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import Link from 'next/link';
 import { BsFillPatchCheckFill } from 'react-icons/bs';
 
@@ -27,9 +25,7 @@ const users = [
 const RightSideBar = () => {
   return (
     <Col lg={4} xxl={3}>
-      <div className="row g-4">
-
-        {/* Ad Image at the top */}
+      <Row className="g-4">
         <Col md={6} lg={12}>
           <div className="card p-3">
             <div className="card-header border-0 p-2">
@@ -107,7 +103,7 @@ const RightSideBar = () => {
           </div>
         </Col>
 
-      </div>
+      </Row>
     </Col>
   );
 };

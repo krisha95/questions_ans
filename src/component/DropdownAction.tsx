@@ -1,95 +1,84 @@
-"use client"
-import React, { useRef, useState, useEffect } from 'react'
+"use client";
+import React, { useState, useRef, useEffect } from "react";
+import { Dropdown } from "react-bootstrap";
 
-type MenuItem = {
-    label: string
-    icon: React.ReactNode
-    onClick?: () => void
-    href?: string
-    divider?: boolean
+export interface DropdownItem {
+  label?: string;
+  icon?: React.ReactNode;
+  onClick?: () => void;
+  href?: string;
+  divider?: boolean;
 }
 
-interface CustomDropdownProps {
-    icon: React.ReactNode
-    menuItems: MenuItem[]
-    align?: 'start' | 'end'
-    className?: string
+interface DropdownActionProps {
+  items: DropdownItem[];
+  toggleIcon: React.ReactNode;
+  wrapperClass?: string;
+  menuClass?: string;
+  toggleButtonClass?: string;
 }
 
-const CustomDropdown: React.FC<CustomDropdownProps> = ({
-    icon,
-    menuItems,
-    align = 'end',
-    className = '',
+const DropdownAction: React.FC<DropdownActionProps> = ({
+  items,
+  toggleIcon,
+  wrapperClass = "",
+  menuClass = "",
+  toggleButtonClass = "btn btn-light btn-sm",
 }) => {
-    const [show, setShow] = useState(false)
-    const menuRef = useRef<HTMLUListElement>(null)
-    const toggleRef = useRef<HTMLSpanElement>(null)
+  const [show, setShow] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
-    const handleClickOutside = (event: MouseEvent) => {
-        if (
-            menuRef.current &&
-            !menuRef.current.contains(event.target as Node) &&
-            toggleRef.current &&
-            !toggleRef.current.contains(event.target as Node)
-        ) {
-            setShow(false)
-        }
-    }
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setShow(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
-    useEffect(() => {
-        document.addEventListener('mousedown', handleClickOutside)
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside)
-        }
-    }, [])
+  return (
+    <div
+      ref={ref}
+      className={`dropdown ${wrapperClass}`}
+      style={{ position: "relative", display: "inline-block" }}
+    >
+      <button
+        onClick={() => setShow((prev) => !prev)}
+        className={toggleButtonClass}
+        aria-expanded={show}
+        type="button"
+      >
+        {toggleIcon}
+      </button>
 
-    return (
-        <div className={`dropdown ${className} position-relative`}>
-            <span
-                ref={toggleRef}
-                className="btn btn-sm btn-round btn-light mb-0 flex-shrink-0"
-                onClick={() => setShow((prev) => !prev)}
-                role="button"
-                aria-expanded={show}
+      <Dropdown.Menu
+        show={show}
+        className={menuClass}
+        style={{ display: show ? "block" : "none", position: "absolute", right: 0, top: "100%", zIndex: 1000 }}
+      >
+        {items.map((item, index) =>
+          item.divider ? (
+            <Dropdown.Divider key={index} />
+          ) : (
+            <Dropdown.Item
+              key={index}
+              href={item.href || "#"}
+              onClick={() => {
+                item.onClick?.();
+                setShow(false);
+              }}
             >
-                {icon}
-            </span>
+              {item.icon && <span className="pe-2">{item.icon}</span>}
+              {item.label}
+            </Dropdown.Item>
+          )
+        )}
+      </Dropdown.Menu>
+    </div>
+  );
+};
 
-            <ul
-                ref={menuRef}
-                className={`dropdown-menu dropdown-w-sm dropdown-menu-start min-w-auto shadow rounded ${show ? 'show' : ''}`}
-                style={{
-                    position: 'absolute',
-                    top: '100%',
-                    right: 0,
-                    zIndex: 999,
-                    transform: 'translateY(8px)',
-                }}
-            > 
-                {menuItems.map((item, index) =>
-                    item.divider ? (
-                        <li key={`divider-${index}`} className="dropdown-divider" />
-                    ) : (
-                        <li key={index}>
-                            <a
-                                className="dropdown-item d-flex align-items-center gap-2"
-                                href={item.href || '#'}
-                                onClick={(e) => {
-                                    e.preventDefault()
-                                    item.onClick?.()
-                                    setShow(false)
-                                }}
-                            >
-                                {item.icon}
-                                {item.label}
-                            </a>
-                        </li>
-                    )
-                )}
-            </ul>
-        </div>
-    )
-}
-
-export default CustomDropdown
+export default DropdownAction;

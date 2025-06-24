@@ -1,6 +1,17 @@
+import DropdownAction from '@/component/DropdownAction';
 import React from 'react'
+import { BiBookmark, BiDotsVertical, BiShare } from 'react-icons/bi';
+import { BsFillExclamationOctagonFill } from 'react-icons/bs';
+import { FaCopy } from 'react-icons/fa6';
 
 const QuestionSlider = () => {
+
+    const menuItems = [
+        { label: "Save", icon: <BiBookmark className='me-2' /> },
+        { label: "Share", icon: <BiShare className='me-2' /> },
+        { label: "Report", icon: <BsFillExclamationOctagonFill className='me-2' /> },
+        { label: "Copy link", icon: <FaCopy className='me-2' /> },
+    ];
     return (
         <div>
             <div className="swiper"
@@ -32,7 +43,7 @@ const QuestionSlider = () => {
 
 
 
-                                <div className="dropdown">
+                                {/* <div className="dropdown">
 
                                     <a href="#" className="btn btn-sm btn-round btn-light mb-0 flex-shrink-0" role="button" id="dropdownShare1" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i className="bi bi-three-dots-vertical"></i>
@@ -44,7 +55,15 @@ const QuestionSlider = () => {
                                         <li><a className="dropdown-item" href="#"><i className="bi bi-exclamation-octagon-fill me-2"></i>Report</a></li>
                                         <li><a className="dropdown-item" href="#"><i className="fas fa-copy me-2"></i>Copy link</a></li>
                                     </ul>
-                                </div>
+                                </div> */}
+
+                                <DropdownAction
+                                    items={menuItems}
+                                    toggleIcon={<BiDotsVertical />}
+                                    wrapperClass="dropdown flex-shrink-0 position-absolute end-0 top-0 p-3"
+                                    toggleButtonClass="btn btn-sm btn-round btn-light mb-0"
+                                    menuClass="dropdown-menu dropdown-menu-end"
+                                />
                             </div>
 
 

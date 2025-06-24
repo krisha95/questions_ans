@@ -4,12 +4,12 @@ import avtar5 from "@/assets/images/avatar/05.jpg";
 import avtar12 from "@/assets/images/avatar/12.jpg";
 import Image from "next/image";
 import Link from "next/link";
-import { BiArrowToLeft, BiLeftArrowAlt, BiRightArrowAlt, BiX } from "react-icons/bi";
+import { BiLeftArrowAlt, BiRightArrowAlt, BiX } from "react-icons/bi";
 import { FaAward, FaCheckCircle } from "react-icons/fa";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 type ProfileType = {
     id: number;
@@ -29,7 +29,7 @@ const profiles: ProfileType[] = [
         id: 1,
         name: "Dennis Barrett",
         avatar: avtar4,
-        profileUrl: "my-profile.html",
+        profileUrl: "/my-profile",
         awards: [
             { type: "bronze", value: "550+" },
             { type: "silver", value: "250+" },
@@ -42,7 +42,7 @@ const profiles: ProfileType[] = [
         id: 2,
         name: "Frances Guerrero",
         avatar: avtar5,
-        profileUrl: "my-profile.html",
+        profileUrl: "/my-profile",
         isVerified: true,
         awards: [
             { type: "bronze", value: "1.3k" },
@@ -56,7 +56,7 @@ const profiles: ProfileType[] = [
         id: 3,
         name: "Creative Group",
         initials: "CG",
-        profileUrl: "group-detail.html",
+        profileUrl: "/group-detail",
         isGroup: true,
         awards: [
             { type: "bronze", value: "2.5K" },
@@ -70,7 +70,7 @@ const profiles: ProfileType[] = [
         id: 4,
         name: "Samuel Bishop",
         avatar: avtar12,
-        profileUrl: "my-profile.html",
+        profileUrl: "/my-profile",
         awards: [
             { type: "bronze", value: "550+" },
             { type: "silver", value: "250+" },
