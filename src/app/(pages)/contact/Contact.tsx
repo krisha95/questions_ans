@@ -30,7 +30,7 @@ const Contact = () => {
                     <h3 className="mb-1">Get In Touch!</h3>
                     <p className="mb-0">
                       You can reach us anytime via{" "}
-                      <a href="#">example@gmail.com</a>
+                      <Link href="#">example@gmail.com</Link>
                     </p>
                   </div>
 
