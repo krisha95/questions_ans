@@ -1,8 +1,8 @@
 "use client";
-import React, { useState } from "react";
-import { Container, Tabs, Tab, Card } from "react-bootstrap";
-import { BiBuildingHouse, BiInfoCircle, BiLayer, BiSmile } from "react-icons/bi";
-import { BsFillEmojiSmileFill, BsHouse } from "react-icons/bs";
+import { useState } from "react";
+import { Container, Tab, Tabs } from "react-bootstrap";
+import { BiInfoCircle, BiLayer, BiSmile } from "react-icons/bi";
+import { BsHouse } from "react-icons/bs";
 
 const HelpsDetails = () => {
     const [key, setKey] = useState("tab-1");
