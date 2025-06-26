@@ -36,6 +36,8 @@ import DropdownAction from "@/component/DropdownAction";
 
 const PollCard = () => {
     const [collapseShow, setCollapseShow] = useState(false);
+    const [open, setOpen] = useState(false);
+    const link = "https://q&a.com//556dd//gmail";
 
     const menuItems = [
         { label: "Save post", icon: <BiBookmark /> },
@@ -95,26 +97,25 @@ const PollCard = () => {
                     <button className="btn btn-sm btn-light mb-0">Comment (1)</button>
 
                     <div className="dropdown">
-                        <button
-                            className="btn btn-sm btn-light mb-0"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                        >
-                            <FaShareNodes className="me-2" />Share
+                        <button onClick={() => setOpen(!open)} className="btn btn-sm btn-light mb-0">
+                            <FaShareNodes className="me-2" /> Share
                         </button>
-                        <div className="dropdown-menu shadow px-3 rounded">
-                            <h6>Share a link to this question</h6>
-                            <div className="input-group mt-2">
-                                <input className="form-control form-control-sm" type="text" value="https:q&amp;a.com//556dd//gmail" readOnly />
-                                <button className="btn btn-sm btn-primary mb-0">Copy</button>
+
+                        {open && (
+                            <div className="dropdown-menu show d-block shadow px-3 rounded mt-1">
+                                <h6>Share a link to this question</h6>
+                                <div className="input-group mt-2">
+                                    <input className="form-control form-control-sm" value={link} readOnly />
+                                    <button className="btn btn-sm btn-primary" onClick={() => navigator.clipboard.writeText(link)}>Copy</button>
+                                </div>
+                                <div className="d-flex gap-2 mt-2">
+                                    <Link href="#" className="btn btn-xs bg-facebook text-white"><FaFacebookF /></Link>
+                                    <Link href="#" className="btn btn-xs bg-whatsapp text-white"><FaWhatsapp /></Link>
+                                    <Link href="#" className="btn btn-xs bg-twitter text-white"><FaXTwitter /></Link>
+                                    <Link href="#" className="btn btn-xs bg-linkedin text-white"><FaLinkedinIn /></Link>
+                                </div>
                             </div>
-                            <ul className="list-inline mb-0 mt-2">
-                                <li className="list-inline-item"><Link className="btn btn-xs btn-icon bg-facebook" href="#"><FaFacebookF /></Link></li>
-                                <li className="list-inline-item"><Link className="btn btn-xs btn-icon bg-whatsapp" href="#"><FaWhatsapp /></Link></li>
-                                <li className="list-inline-item"><Link className="btn btn-xs btn-icon bg-twitter" href="#"><FaXTwitter /></Link></li>
-                                <li className="list-inline-item"><Link className="btn btn-xs btn-icon bg-linkedin" href="#"><FaLinkedinIn /></Link></li>
-                            </ul>
-                        </div>
+                        )}
                     </div>
 
                     <button
@@ -125,7 +126,6 @@ const PollCard = () => {
                     </button>
                 </div>
 
-                {/* Collapse Poll Results */}
                 <Collapse in={collapseShow}>
                     <div className="card card-body bg-light bg-opacity-50 mt-4">
                         <div className="d-sm-flex justify-content-sm-between align-items-center">

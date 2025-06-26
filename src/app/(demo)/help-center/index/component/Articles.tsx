@@ -1,15 +1,13 @@
 'use client'
 
-import React from 'react'
 import Image from 'next/image'
 import {
+    FaRegComments,
     FaEye,
-    FaComments,
-    FaThumbsUp,
     FaSpinner,
+    FaThumbsUp,
 } from 'react-icons/fa6'
 
-// Avatar image imports
 import avatar01 from '@/assets/images/avatar/01.jpg'
 import avatar02 from '@/assets/images/avatar/02.jpg'
 import avatar03 from '@/assets/images/avatar/03.jpg'
@@ -19,25 +17,26 @@ import avatar07 from '@/assets/images/avatar/07.jpg'
 import avatar08 from '@/assets/images/avatar/08.jpg'
 import avatar09 from '@/assets/images/avatar/09.jpg'
 import avatar10 from '@/assets/images/avatar/10.jpg'
+import Link from 'next/link'
+import { Card, Col, Container, Row } from 'react-bootstrap'
 
 const Articles = () => {
     return (
         <section>
-            <div className="container">
-                <div className="row">
-                    <div className="col-12 text-center">
+            <Container>
+                <Row>
+                    <Col xs={12} className="text-center">
                         <h2 className="text-center mb-4">Popular Articles</h2>
-                    </div>
-                </div>
-                <div className="row g-4">
-                    <div className="col-xl-9 mx-auto">
+                    </Col>
+                </Row>
+                <Row className="g-4">
+                    <Col xl={9} className="mx-auto">
                         <div className="vstack gap-4">
-                            {/* === Article 1 === */}
-                            <div className="card card-body p-4">
+                            <Card className="p-4">
                                 <div className="d-md-flex justify-content-between align-items-center">
                                     <div className="mb-3 mb-md-0">
                                         <h4 className="card-title mb-2 mb-sm-1">
-                                            <a href="#">The installation part (10 articles)</a>
+                                            <Link href="#">The installation part (10 articles)</Link>
                                         </h4>
                                         <div className="d-flex align-items-start align-items-sm-center">
                                             <ul className="avatar-group mb-0">
@@ -61,25 +60,24 @@ const Articles = () => {
                                         </div>
                                     </div>
                                     <div className="hstack gap-4 gap-sm-5 flex-wrap">
-                                        <a href="#" className="text-primary-hover mb-0">
+                                        <Link href="#" className="text-primary-hover mb-0">
                                             <FaEye className="me-2" />578
-                                        </a>
-                                        <a href="#" className="text-primary-hover mb-0">
-                                            <FaComments className="me-2" />25
-                                        </a>
-                                        <a href="#" className="text-primary-hover mb-0">
+                                        </Link>
+                                        <Link href="#" className="text-primary-hover mb-0">
+                                            <FaRegComments className="me-2" />25
+                                        </Link>
+                                        <Link href="#" className="text-primary-hover mb-0">
                                             <FaThumbsUp className="me-2" />10
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
-                            </div>
+                            </Card>
 
-                            {/* === Article 2 === */}
-                            <div className="card card-body p-4">
+                            <Card className="p-4">
                                 <div className="d-md-flex justify-content-between align-items-center">
                                     <div className="mb-3 mb-md-0">
                                         <h4 className="card-title mb-2 mb-sm-1">
-                                            <a href="#">Supporting Customers With Inbox</a>
+                                            <Link href="#">Supporting Customers With Inbox</Link>
                                         </h4>
                                         <div className="d-flex align-items-start align-items-sm-center">
                                             <ul className="avatar-group mb-0">
@@ -103,25 +101,24 @@ const Articles = () => {
                                         </div>
                                     </div>
                                     <div className="hstack gap-4 gap-sm-5 flex-wrap">
-                                        <a href="#" className="text-primary-hover mb-0">
+                                        <Link href="#" className="text-primary-hover mb-0">
                                             <FaEye className="me-2" />254
-                                        </a>
-                                        <a href="#" className="text-primary-hover mb-0">
-                                            <FaComments className="me-2" />20
-                                        </a>
-                                        <a href="#" className="text-primary-hover mb-0">
+                                        </Link>
+                                        <Link href="#" className="text-primary-hover mb-0">
+                                            <FaRegComments className="me-2" />20
+                                        </Link>
+                                        <Link href="#" className="text-primary-hover mb-0">
                                             <FaThumbsUp className="me-2" />18
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
-                            </div>
+                            </Card>
 
-                            {/* === Article 3 === */}
-                            <div className="card card-body p-4">
+                            <Card className="p-4">
                                 <div className="d-md-flex justify-content-between align-items-center">
                                     <div className="mb-3 mb-md-0">
                                         <h4 className="card-title mb-2 mb-sm-1">
-                                            <a href="#">Sending Effective Emails</a>
+                                            <Link href="#">Sending Effective Emails</Link>
                                         </h4>
                                         <div className="d-flex align-items-start align-items-sm-center">
                                             <ul className="avatar-group mb-0">
@@ -143,25 +140,24 @@ const Articles = () => {
                                         </div>
                                     </div>
                                     <div className="hstack gap-4 gap-sm-5 flex-wrap">
-                                        <a href="#" className="text-primary-hover mb-0">
+                                        <Link href="#" className="text-primary-hover mb-0">
                                             <FaEye className="me-2" />789
-                                        </a>
-                                        <a href="#" className="text-primary-hover mb-0">
-                                            <FaComments className="me-2" />18
-                                        </a>
-                                        <a href="#" className="text-primary-hover mb-0">
+                                        </Link>
+                                        <Link href="#" className="text-primary-hover mb-0">
+                                            <FaRegComments className="me-2" />18
+                                        </Link>
+                                        <Link href="#" className="text-primary-hover mb-0">
                                             <FaThumbsUp className="me-2" />56
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
-                            </div>
+                            </Card>
 
-                            {/* === Article 4 === */}
-                            <div className="card card-body p-4">
+                            <Card className="p-4">
                                 <div className="d-md-flex justify-content-between align-items-center">
                                     <div className="mb-3 mb-md-0">
                                         <h4 className="card-title mb-2 mb-sm-1">
-                                            <a href="#">Connect With Customers</a>
+                                            <Link href="#">Connect With Customers</Link>
                                         </h4>
                                         <div className="d-flex align-items-start align-items-sm-center">
                                             <ul className="avatar-group mb-0">
@@ -185,25 +181,24 @@ const Articles = () => {
                                         </div>
                                     </div>
                                     <div className="hstack gap-4 gap-sm-5 flex-wrap">
-                                        <a href="#" className="text-primary-hover mb-0">
+                                        <Link href="#" className="text-primary-hover mb-0">
                                             <FaEye className="me-2" />758
-                                        </a>
-                                        <a href="#" className="text-primary-hover mb-0">
-                                            <FaComments className="me-2" />21
-                                        </a>
-                                        <a href="#" className="text-primary-hover mb-0">
+                                        </Link>
+                                        <Link href="#" className="text-primary-hover mb-0">
+                                            <FaRegComments className="me-2" />21
+                                        </Link>
+                                        <Link href="#" className="text-primary-hover mb-0">
                                             <FaThumbsUp className="me-2" />125
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
-                            </div>
+                            </Card>
 
-                            {/* === Article 5 === */}
-                            <div className="card card-body p-4">
+                            <Card className="p-4">
                                 <div className="d-md-flex justify-content-between align-items-center">
                                     <div className="mb-3 mb-md-0">
                                         <h4 className="card-title mb-2 mb-sm-1">
-                                            <a href="#">Upgrade Gulp 3 to Gulp 4 the gulpfile.js workflow</a>
+                                            <Link href="#">Upgrade Gulp 3 to Gulp 4 the gulpfile.js workflow</Link>
                                         </h4>
                                         <div className="d-flex align-items-start align-items-sm-center">
                                             <ul className="avatar-group mb-0">
@@ -227,30 +222,29 @@ const Articles = () => {
                                         </div>
                                     </div>
                                     <div className="hstack gap-4 gap-sm-5 flex-wrap">
-                                        <a href="#" className="text-primary-hover mb-0">
+                                        <Link href="#" className="text-primary-hover mb-0">
                                             <FaEye className="me-2" />685
-                                        </a>
-                                        <a href="#" className="text-primary-hover mb-0">
-                                            <FaComments className="me-2" />12
-                                        </a>
-                                        <a href="#" className="text-primary-hover mb-0">
+                                        </Link>
+                                        <Link href="#" className="text-primary-hover mb-0">
+                                            <FaRegComments className="me-2" />12
+                                        </Link>
+                                        <Link href="#" className="text-primary-hover mb-0">
                                             <FaThumbsUp className="me-2" />245
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
-                            </div>
+                            </Card>
 
-                            {/* === View all articles button === */}
                             <div className="text-center">
-                                <a href="#" className="btn btn-primary-soft mb-0">
+                                <Link href="#" className="btn btn-primary-soft mb-0">
                                     <FaSpinner className="me-2" />
                                     View all article
-                                </a>
+                                </Link>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </Col>
+                </Row>
+            </Container>
         </section>
     )
 }

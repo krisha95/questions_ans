@@ -16,16 +16,14 @@ import { BsFillCaretUpFill } from 'react-icons/bs';
 import { FaFacebookF, FaLinkedinIn, FaShareNodes, FaTwitter, FaWhatsapp } from 'react-icons/fa6';
 
 const Content = () => {
-    const [open, setOpen] = useState(false);
     const [collpaseOpen, setCollpaseOpen] = useState(true);
-
+    const [open, setOpen] = useState(false);
     const link = "https://q&a.com//556dd//gmail";
 
     const avatarImages = [avatar1, avatar2, avatar3, avatar4, avatar5, avatar6];
 
     return (
         <Col lg={8} xl={9}>
-
             <div className="card card-body d-flex flex-sm-row p-0 mb-4">
 
                 <div className="border d-block rounded text-center sticky-sm-top top-sm-70px h-100 p-1 m-3">
@@ -45,8 +43,6 @@ const Content = () => {
                             <Link href="#" className="btn btn-sm btn-round btn-light mb-0 flex-shrink-0"><BiBookmark /></Link>
                         </div>
                     </div>
-
-
 
                     <div className="card-body">
                         <h6 className="mb-2">Hi everyone!</h6>
@@ -150,11 +146,7 @@ const Content = () => {
                         </div>
 
                         <hr className="my-5" />
-
-
                         <h4 className="card-title mb-4">All Replies</h4>
-
-
                         <ul className="list-unstyled mb-0">
 
                             <li className="list-item comment-wrap">

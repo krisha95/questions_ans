@@ -9,7 +9,7 @@ const Banner = () => {
           <Col sm={6}>
             <h1 className="h2">Knowledge base help desk</h1>
           </Col>
-
+          
           <Col sm={6} className="text-sm-end">
             <div className="d-grid d-sm-block">
               <button

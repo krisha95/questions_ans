@@ -1,5 +1,4 @@
 "use client";
-
 import dynamic from "next/dynamic";
 import React, { useState } from "react";
 const ReactQuill = dynamic(() => import("react-quill-new"), { ssr: false });

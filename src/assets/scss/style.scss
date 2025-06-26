@@ -49,3 +49,19 @@
 
 // In this scss you can write your scss/css
 @import "user";
+
+
+.ql-toolbar.ql-snow {
+    border: 0 !important;
+    border-bottom: 1px solid #ccc !important;
+}
+
+.ql-container.ql-snow {
+    border: 0 !important;
+}
+
+.popup-after {
+    &::after {
+        display: none;
+    }
+}

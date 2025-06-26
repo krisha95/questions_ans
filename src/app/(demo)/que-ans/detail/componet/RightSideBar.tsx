@@ -5,14 +5,12 @@ import Link from "next/link";
 import { Card, Col, Row } from "react-bootstrap";
 import { BsChatSquareDots, BsFillPatchCheckFill } from "react-icons/bs";
 
-// Import images at the top
 import ad2 from "@/assets/images/advertisement/02.jpg";
 import avatar2 from "@/assets/images/avatar/02.jpg";
 import avatar3 from "@/assets/images/avatar/03.jpg";
 import avatar5 from "@/assets/images/avatar/05.jpg";
 import avatar9 from "@/assets/images/avatar/09.jpg";
 
-// Sample Data
 const trendingQuestions = [
   {
     title: "Product Subtract Button is not working perfectly ecommerce app?",
@@ -95,9 +93,8 @@ const tags = [
 
 const RightSideBar = () => {
   return (
-    <Col xl={4} xxl={3} className="mt-4 mt-xl-0">
+    <Col xl={4} xxl={3}>
       <Row className="g-4">
-        {/* Trending Questions */}
         <Col md={6} xl={12}>
           <Card className="p-3">
             <Card.Header className="border-0 p-2">
@@ -107,9 +104,8 @@ const RightSideBar = () => {
               {trendingQuestions.map((q, idx) => (
                 <div
                   key={idx}
-                  className={`pb-3 mb-3 ${
-                    idx !== trendingQuestions.length - 1 ? "border-bottom" : ""
-                  }`}
+                  className={`pb-3 mb-3 ${idx !== trendingQuestions.length - 1 ? "border-bottom" : ""
+                    }`}
                 >
                   <h6 className="mb-2 fw-normal">
                     <Link href={q.link}>{q.title}</Link>
@@ -124,7 +120,6 @@ const RightSideBar = () => {
           </Card>
         </Col>
 
-        {/* Top Members */}
         <Col md={6} xl={12}>
           <Card className="p-3">
             <Card.Header className="border-0 p-2 mb-2">
@@ -178,7 +173,6 @@ const RightSideBar = () => {
           </Card>
         </Col>
 
-        {/* Advertisement */}
         <Col md={6} xl={12}>
           <Card className="bg-transparent">
             <Link href="#" className="position-relative d-block">
@@ -203,7 +197,6 @@ const RightSideBar = () => {
           </Card>
         </Col>
 
-        {/* Trending Tags */}
         <Col md={6} xl={12}>
           <Card className="p-3">
             <Card.Header className="border-0 p-2">

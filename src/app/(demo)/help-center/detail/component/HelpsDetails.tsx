@@ -63,9 +63,7 @@ const HelpsDetails = () => {
                             ></Tab>
                         </Tabs>
                     </div>
-                    {/* Tabs END */}
 
-                    {/* Tab content START */}
                     <div className="bg-mode rounded">
                         {key === "tab-1" && (
                             <div className="tab-pane fade show active" id="tab-1">
@@ -178,7 +176,6 @@ const HelpsDetails = () => {
                             </div>
                         )}
                     </div>
-                    {/* Tab content END */}
                 </div>
             </Container>
         </section>

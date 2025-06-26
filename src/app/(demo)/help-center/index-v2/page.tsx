@@ -1,7 +1,10 @@
 import React from "react";
 import Banner from "./component/Banner";
-import { Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import LeftSideBar from "./component/LeftSideBar";
+import HelpBox from "./component/HelpBox";
+import Faq from "./component/Faq";
+import Cta from "./component/Cta";
 
 const page = () => {
   return (
@@ -11,6 +14,11 @@ const page = () => {
         <Container>
           <Row>
             <LeftSideBar />
+            <Col xl={9}>
+              <HelpBox />
+              <Faq />
+              <Cta />
+            </Col>
           </Row>
         </Container>
       </section>
