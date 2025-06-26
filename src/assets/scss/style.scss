@@ -34,7 +34,7 @@
 @import "custom/forms/form-check";
 @import "custom/forms/form-control";
 
-// Theme components 
+// Theme components
 @import "components/general";
 @import "components/avatar";
 @import "components/utilities";
@@ -50,18 +50,23 @@
 // In this scss you can write your scss/css
 @import "user";
 
-
 .ql-toolbar.ql-snow {
-    border: 0 !important;
-    border-bottom: 1px solid #ccc !important;
+  border: 0 !important;
+  border-bottom: 1px solid #ccc !important;
 }
 
 .ql-container.ql-snow {
-    border: 0 !important;
+  border: 0 !important;
 }
 
 .popup-after {
-    &::after {
-        display: none;
-    }
+  &::after {
+    display: none;
+  }
+}
+
+.popup-before {
+  &::before {
+    display: none;
+  }
 }
