@@ -22,6 +22,7 @@ import avatar03 from "@/assets/images/avatar/03.jpg";
 import avatar04 from "@/assets/images/avatar/04.jpg";
 import avatar05 from "@/assets/images/avatar/05.jpg";
 import avatar09 from "@/assets/images/avatar/09.jpg";
+import Link from "next/link";
 
 const AnswerDetail = () => {
   return (
@@ -103,12 +104,12 @@ const AnswerDetail = () => {
             Comment (1)
           </Button>
 
-          <Dropdown drop="start" className="ms-sm-auto">
+          <Dropdown drop="start" className="ms-sm-auto no-before-icon">
             <Dropdown.Toggle
               as={Button}
               size="sm"
               variant="light"
-              
+
             >
               <FaShareNodes className="me-2" /> Share
             </Dropdown.Toggle>
@@ -120,31 +121,14 @@ const AnswerDetail = () => {
                   type="text"
                   defaultValue="https://q&a.com//556dd//gmail"
                 />
-                <Button size="sm" variant="primary">
-                  Copy
-                </Button>
+                <button className="btn btn-sm btn-primary mb-0">Copy</button>
               </InputGroup>
               <ul className="list-inline mt-2 mb-0">
-                <li className="list-inline-item">
-                  <Button size="sm" className="bg-facebook">
-                    <FaFacebookF />
-                  </Button>
-                </li>
-                <li className="list-inline-item">
-                  <Button size="sm" className="bg-whatsapp">
-                    <FaWhatsapp />
-                  </Button>
-                </li>
-                <li className="list-inline-item">
-                  <Button size="sm" className="bg-twitter">
-                    <FaXTwitter />
-                  </Button>
-                </li>
-                <li className="list-inline-item">
-                  <Button size="sm" className="bg-linkedin">
-                    <FaLinkedinIn />
-                  </Button>
-                </li>
+
+                <li className="list-inline-item"> <Link className="btn btn-xs btn-icon mb-0 bg-facebook" href="#"><FaFacebookF /></Link> </li>
+                <li className="list-inline-item"> <Link className="btn btn-xs btn-icon mb-0 bg-whatsapp" href="#"><FaWhatsapp /></Link> </li>
+                <li className="list-inline-item"> <Link className="btn btn-xs btn-icon mb-0 bg-twitter" href="#"><FaXTwitter /></Link> </li>
+                <li className="list-inline-item"> <Link className="btn btn-xs btn-icon mb-0 bg-linkedin" href="#"><FaLinkedinIn /></Link> </li>
               </ul>
             </Dropdown.Menu>
           </Dropdown>
@@ -186,7 +170,7 @@ const AnswerDetail = () => {
               </div>
               <div className="ms-2">
                 <h6 className="mb-0">
-                  <a href="#">Frances Guerrero</a>
+                  <Link href="#">Frances Guerrero</Link>
                 </h6>
                 <div className="hstack gap-4 flex-wrap">
                   <small>8 hour ago</small>
@@ -259,7 +243,7 @@ const AnswerDetail = () => {
           </InputGroup>
         </Form>
       </Card.Body>
-    </Card>
+    </Card >
   );
 };
 

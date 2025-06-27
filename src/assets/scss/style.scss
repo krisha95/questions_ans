@@ -65,8 +65,12 @@
   }
 }
 
-.popup-before {
-  &::before {
-    display: none;
-  }
+.no-before-icon.dropstart>.dropdown-toggle::before {
+  content: none !important;
 }
+
+.no-after-icon.dropdown>.dropdown-toggle::after {
+  content: none !important;
+}
+
+// .dropdown .dropdown-toggle:after 

@@ -10,16 +10,13 @@ import QuillTool from '@/component/QuillTool';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { Col, Collapse } from 'react-bootstrap';
+import { Col, Collapse, Dropdown, Form, InputGroup } from 'react-bootstrap';
 import { BiBookmark, BiShare } from 'react-icons/bi';
 import { BsFillCaretUpFill } from 'react-icons/bs';
-import { FaFacebookF, FaLinkedinIn, FaShareNodes, FaTwitter, FaWhatsapp } from 'react-icons/fa6';
+import { FaFacebookF, FaLinkedinIn, FaShareNodes, FaWhatsapp, FaXTwitter } from 'react-icons/fa6';
 
 const Content = () => {
     const [collpaseOpen, setCollpaseOpen] = useState(true);
-    const [open, setOpen] = useState(false);
-    const link = "https://q&a.com//556dd//gmail";
-
     const avatarImages = [avatar1, avatar2, avatar3, avatar4, avatar5, avatar6];
 
     return (
@@ -59,27 +56,33 @@ const Content = () => {
                             </button>
 
 
-                            <div className="dropdown">
-                                <button onClick={() => setOpen(!open)} className="btn btn-sm btn-light mb-0">
-                                    <FaShareNodes className="me-2" /> Share
-                                </button>
+                            <Dropdown drop="start" className="ms-sm-auto no-before-icon">
+                                <Dropdown.Toggle
+                                    size="sm"
+                                    variant="light"
 
-                                {open && (
-                                    <div className="dropdown-menu show d-block shadow px-3 rounded mt-1">
-                                        <h6>Share a link to this question</h6>
-                                        <div className="input-group mt-2">
-                                            <input className="form-control form-control-sm" value={link} readOnly />
-                                            <button className="btn btn-sm btn-primary" onClick={() => navigator.clipboard.writeText(link)}>Copy</button>
-                                        </div>
-                                        <div className="d-flex gap-2 mt-2">
-                                            <Link href="#" className="btn btn-xs bg-facebook text-white"><FaFacebookF /></Link>
-                                            <Link href="#" className="btn btn-xs bg-whatsapp text-white"><FaWhatsapp /></Link>
-                                            <Link href="#" className="btn btn-xs bg-twitter text-white"><FaTwitter /></Link>
-                                            <Link href="#" className="btn btn-xs bg-linkedin text-white"><FaLinkedinIn /></Link>
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
+                                >
+                                    <FaShareNodes className="me-2" /> Share
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu className="shadow px-3 rounded">
+                                    <h6>Share a link to this question</h6>
+                                    <InputGroup className="mt-2">
+                                        <Form.Control
+                                            size="sm"
+                                            type="text"
+                                            defaultValue="https://q&a.com//556dd//gmail"
+                                        />
+                                        <button className="btn btn-sm btn-primary mb-0">Copy</button>
+                                    </InputGroup>
+                                    <ul className="list-inline mt-2 mb-0">
+
+                                        <li className="list-inline-item"> <Link className="btn btn-xs btn-icon mb-0 bg-facebook" href="#"><FaFacebookF /></Link> </li>
+                                        <li className="list-inline-item"> <Link className="btn btn-xs btn-icon mb-0 bg-whatsapp" href="#"><FaWhatsapp /></Link> </li>
+                                        <li className="list-inline-item"> <Link className="btn btn-xs btn-icon mb-0 bg-twitter" href="#"><FaXTwitter /></Link> </li>
+                                        <li className="list-inline-item"> <Link className="btn btn-xs btn-icon mb-0 bg-linkedin" href="#"><FaLinkedinIn /></Link> </li>
+                                    </ul>
+                                </Dropdown.Menu>
+                            </Dropdown>
                         </div>
 
                         <Collapse in={collpaseOpen}>

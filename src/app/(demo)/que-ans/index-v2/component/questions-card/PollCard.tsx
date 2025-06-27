@@ -1,11 +1,9 @@
 "use client"
-
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { Col, Collapse, Row } from "react-bootstrap";
+import { Col, Collapse, Dropdown, Form, InputGroup, Row } from "react-bootstrap";
 import {
-    BiBookBookmark,
     BiBookmark,
     BiDotsHorizontal,
     BiFlag,
@@ -36,8 +34,7 @@ import DropdownAction from "@/component/DropdownAction";
 
 const PollCard = () => {
     const [collapseShow, setCollapseShow] = useState(false);
-    const [open, setOpen] = useState(false);
-    const link = "https://q&a.com//556dd//gmail";
+
 
     const menuItems = [
         { label: "Save post", icon: <BiBookmark /> },
@@ -57,7 +54,6 @@ const PollCard = () => {
                 menuClass="dropdown-menu dropdown-menu-end"
             />
 
-            {/* Header */}
             <div className="card-header border-0 p-4">
                 <div className="d-flex align-items-center">
                     <div className="avatar flex-shrink-0">
@@ -96,27 +92,33 @@ const PollCard = () => {
 
                     <button className="btn btn-sm btn-light mb-0">Comment (1)</button>
 
-                    <div className="dropdown">
-                        <button onClick={() => setOpen(!open)} className="btn btn-sm btn-light mb-0">
-                            <FaShareNodes className="me-2" /> Share
-                        </button>
+                    <Dropdown drop="start" className="ms-sm-auto no-before-icon">
+                        <Dropdown.Toggle
+                            size="sm"
+                            variant="light"
 
-                        {open && (
-                            <div className="dropdown-menu show d-block shadow px-3 rounded mt-1">
-                                <h6>Share a link to this question</h6>
-                                <div className="input-group mt-2">
-                                    <input className="form-control form-control-sm" value={link} readOnly />
-                                    <button className="btn btn-sm btn-primary" onClick={() => navigator.clipboard.writeText(link)}>Copy</button>
-                                </div>
-                                <div className="d-flex gap-2 mt-2">
-                                    <Link href="#" className="btn btn-xs bg-facebook text-white"><FaFacebookF /></Link>
-                                    <Link href="#" className="btn btn-xs bg-whatsapp text-white"><FaWhatsapp /></Link>
-                                    <Link href="#" className="btn btn-xs bg-twitter text-white"><FaXTwitter /></Link>
-                                    <Link href="#" className="btn btn-xs bg-linkedin text-white"><FaLinkedinIn /></Link>
-                                </div>
-                            </div>
-                        )}
-                    </div>
+                        >
+                            <FaShareNodes className="me-2" /> Share
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu className="shadow px-3 rounded">
+                            <h6>Share a link to this question</h6>
+                            <InputGroup className="mt-2">
+                                <Form.Control
+                                    size="sm"
+                                    type="text"
+                                    defaultValue="https://q&a.com//556dd//gmail"
+                                />
+                                <button className="btn btn-sm btn-primary mb-0">Copy</button>
+                            </InputGroup>
+                            <ul className="list-inline mt-2 mb-0">
+
+                                <li className="list-inline-item"> <Link className="btn btn-xs btn-icon mb-0 bg-facebook" href="#"><FaFacebookF /></Link> </li>
+                                <li className="list-inline-item"> <Link className="btn btn-xs btn-icon mb-0 bg-whatsapp" href="#"><FaWhatsapp /></Link> </li>
+                                <li className="list-inline-item"> <Link className="btn btn-xs btn-icon mb-0 bg-twitter" href="#"><FaXTwitter /></Link> </li>
+                                <li className="list-inline-item"> <Link className="btn btn-xs btn-icon mb-0 bg-linkedin" href="#"><FaLinkedinIn /></Link> </li>
+                            </ul>
+                        </Dropdown.Menu>
+                    </Dropdown>
 
                     <button
                         onClick={() => setCollapseShow(!collapseShow)}
@@ -125,7 +127,6 @@ const PollCard = () => {
                         Show Result
                     </button>
                 </div>
-
                 <Collapse in={collapseShow}>
                     <div className="card card-body bg-light bg-opacity-50 mt-4">
                         <div className="d-sm-flex justify-content-sm-between align-items-center">
@@ -160,7 +161,6 @@ const PollCard = () => {
                     </div>
                 </Collapse>
 
-                {/* Comment Section */}
                 <ul className="comment-wrap list-unstyled mt-4 mb-0">
                     <li className="comment-item">
                         <div className="d-flex mb-4">
@@ -197,7 +197,6 @@ const PollCard = () => {
                     </li>
                 </ul>
 
-                {/* Comment Form */}
                 <form className="bg-light d-sm-flex rounded-2 p-3 mt-3">
                     <div className="avatar avatar-sm flex-shrink-0 me-2">
                         <Image className="avatar-img rounded-circle" src={avatar9} alt="avatar" />

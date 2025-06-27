@@ -3,9 +3,9 @@ import TicketCreate from './component/TicketCreate'
 
 const page = () => {
     return (
-        <>
+        <main>
             <TicketCreate />
-        </>
+        </main>
     )
 }
 

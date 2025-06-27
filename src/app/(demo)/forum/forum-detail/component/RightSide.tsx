@@ -82,7 +82,6 @@ const RightSide = () => {
                     </div>
                 </Col>
 
-
                 <Col md={6} lg={12}>
                     <div className="card p-3">
 
@@ -93,7 +92,7 @@ const RightSide = () => {
                         <div className="card-body p-2">
 
                             <div className="border-bottom pb-3 mb-3">
-                                <h6 className="mb-2 fw-normal"><Link href="answer-detail-minimal.html">What is the
+                                <h6 className="mb-2 fw-normal"><Link href="que-ans/detail-minimal">What is the
                                     importance of customer feedback in business?</Link></h6>
                                 <p className="small mb-0"><BsChatSquareDots className="me-1" />05
                                     Answers</p>
@@ -101,16 +100,16 @@ const RightSide = () => {
 
 
                             <div className="border-bottom pb-3 mb-3">
-                                <h6 className="mb-2 fw-normal"><a href="answer-detail-minimal.html">Explain the
-                                    concept of object-oriented programming (OOP).</a></h6>
+                                <h6 className="mb-2 fw-normal"><Link href="que-ans/detail-minimal">Explain the
+                                    concept of object-oriented programming (OOP).</Link></h6>
                                 <p className="small mb-0"><BsChatSquareDots className="me-1" />08
                                     Answers</p>
                             </div>
 
 
                             <div className="">
-                                <h6 className="mb-2 fw-normal"><a href="answer-detail-minimal.html">How does
-                                    digital marketing impact business growth?</a></h6>
+                                <h6 className="mb-2 fw-normal"><Link href="que-ans/detail-minimal">How does
+                                    digital marketing impact business growth?</Link></h6>
                                 <p className="small mb-0"><BsChatSquareDots className="me-1" />11
                                     Answers</p>
                             </div>
@@ -132,7 +131,7 @@ const RightSide = () => {
 
                             <h5>Q&A Organize Team</h5>
                             <p className="mb-2">Start collaborating and organizational Knowledge</p>
-                            <a href="#" className="btn btn-warning mb-0 w-100">Create a free team</a>
+                            <Link href="#" className="btn btn-warning mb-0 w-100">Create a free team</Link>
 
                             <Image src={element20} className="mb-n8 text-center" alt="" />
                         </div>

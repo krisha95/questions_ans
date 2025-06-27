@@ -1,18 +1,17 @@
 "use client"
-import React, { useState } from 'react'
 import avatar8 from "@/assets/images/avatar/08.jpg"
+import avatar9 from "@/assets/images/avatar/09.jpg"
 import Image from 'next/image'
 import Link from 'next/link'
-import { Card, Collapse } from 'react-bootstrap'
+import { useState } from 'react'
+import { Card, Collapse, Dropdown, DropdownMenu, DropdownToggle, Form, InputGroup } from 'react-bootstrap'
 import { BsFillCaretUpFill } from 'react-icons/bs'
-import avatar9 from "@/assets/images/avatar/09.jpg"
 import { FaFacebookF, FaLinkedinIn, FaShareNodes, FaWhatsapp, FaXTwitter } from 'react-icons/fa6'
 
 
 const AnswerCard = () => {
-    const [open, setOpen] = useState(false);
     const [collpas, setcollpas] = useState(false)
-    const link = "https://q&a.com//556dd//gmail";
+
     return (
         <Card className="card-body p-sm-4">
 
@@ -44,12 +43,10 @@ const AnswerCard = () => {
                     `}</code></pre>
             </div>
 
-
             <div className="hstack gap-2 mt-3">
                 <Link href="#" className="badge bg-light text-body">Python</Link>
                 <Link href="#" className="badge bg-light text-body">JAVA</Link>
             </div>
-
 
             <div className="hstack gap-2 gap-sm-3 flex-wrap mt-4">
 
@@ -60,30 +57,29 @@ const AnswerCard = () => {
                     </label>
                     <span className="fw-normal">00</span>
                 </div>
-
-
-                <div className="dropdown">
-                    <button onClick={() => setOpen(!open)} className="btn btn-sm btn-light mb-0">
+                <Dropdown className="no-after-icon">
+                    <DropdownToggle className="btn btn-sm btn-light mb-0" role="button" id="dropdownShare5" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">
                         <FaShareNodes className="me-2" /> Share
-                    </button>
+                    </DropdownToggle>
 
-                    {open && (
-                        <div className="dropdown-menu show d-block shadow px-3 rounded mt-1">
-                            <h6>Share a link to this question</h6>
-                            <div className="input-group mt-2">
-                                <input className="form-control form-control-sm" value={link} readOnly />
-                                <button className="btn btn-sm btn-primary" onClick={() => navigator.clipboard.writeText(link)}>Copy</button>
-                            </div>
-                            <div className="d-flex gap-2 mt-2">
-                                <Link href="#" className="btn btn-xs bg-facebook text-white"><FaFacebookF /></Link>
-                                <Link href="#" className="btn btn-xs bg-whatsapp text-white"><FaWhatsapp /></Link>
-                                <Link href="#" className="btn btn-xs bg-twitter text-white"><FaXTwitter /></Link>
-                                <Link href="#" className="btn btn-xs bg-linkedin text-white"><FaLinkedinIn /></Link>
-                            </div>
+                    <DropdownMenu className="dropdown-menu dropdown-menu-size-sm shadow px-3 rounded" aria-labelledby="dropdownShare5">
+                        <h6>Share a link to this question</h6>
+
+
+                        <div className="input-group mt-2">
+                            <input className="form-control form-control-sm" type="text" value="https:q&amp;a.com//556dd//gmail" placeholder="" />
+                            <button className="btn btn-sm btn-primary mb-0">Copy</button>
                         </div>
-                    )}
-                </div>
 
+
+                        <ul className="list-inline mt-2 mb-0">
+                            <li className="list-inline-item"> <Link className="btn btn-xs btn-icon mb-0 bg-facebook" href="#"><FaFacebookF /></Link> </li>
+                            <li className="list-inline-item"> <Link className="btn btn-xs btn-icon mb-0 bg-whatsapp" href="#"><FaWhatsapp /></Link> </li>
+                            <li className="list-inline-item"> <Link className="btn btn-xs btn-icon mb-0 bg-twitter" href="#"><FaXTwitter /></Link> </li>
+                            <li className="list-inline-item"> <Link className="btn btn-xs btn-icon mb-0 bg-linkedin" href="#"><FaLinkedinIn /></Link> </li>
+                        </ul>
+                    </DropdownMenu>
+                </Dropdown>
                 <button onClick={() => setcollpas(!collpas)} className="btn btn-sm btn-light mb-0 ms-sm-auto" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseComment1">0 Reply</button>
             </div>
             <Collapse in={collpas}>

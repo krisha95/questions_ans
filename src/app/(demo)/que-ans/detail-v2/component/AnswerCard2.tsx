@@ -1,27 +1,25 @@
 "use client";
-import React, { useState } from "react";
 import avatar01 from "@/assets/images/avatar/01.jpg";
-import avatar05 from "@/assets/images/avatar/05.jpg";
 import avatar04 from "@/assets/images/avatar/04.jpg";
+import avatar05 from "@/assets/images/avatar/05.jpg";
 import avatar08 from "@/assets/images/avatar/08.jpg";
 import avatar09 from "@/assets/images/avatar/09.jpg";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import { Collapse, Dropdown, DropdownMenu, DropdownToggle, Form, InputGroup } from "react-bootstrap";
+import { BsFillCaretUpFill, BsFillCheckCircleFill } from "react-icons/bs";
 import {
     FaFacebookF,
     FaLinkedinIn,
     FaReply,
     FaShareNodes,
-    FaTwitter,
     FaWhatsapp,
+    FaXTwitter
 } from "react-icons/fa6";
-import { Collapse } from "react-bootstrap";
-import { BsFillCaretUpFill, BsFillCheckCircleFill } from "react-icons/bs";
 
 const AnswerCard2 = () => {
-    const [open, setOpen] = useState(false);
     const [toggle, setToggle] = useState(false);
-    const link = "https://q&a.com//556dd//gmail";
 
     return (
         <div className="card card-body border border-success p-sm-4" id="marked-answer">
@@ -82,27 +80,29 @@ const AnswerCard2 = () => {
                     <span className="fw-normal">01</span>
                 </div>
 
-                <div className="dropdown">
-                    <button onClick={() => setOpen(!open)} className="btn btn-sm btn-light mb-0">
+                <Dropdown className="no-after-icon">
+                    <DropdownToggle className="btn btn-sm btn-light mb-0" role="button" id="dropdownShare5" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">
                         <FaShareNodes className="me-2" /> Share
-                    </button>
+                    </DropdownToggle>
 
-                    {open && (
-                        <div className="dropdown-menu show d-block shadow px-3 rounded mt-1">
-                            <h6>Share a link to this question</h6>
-                            <div className="input-group mt-2">
-                                <input className="form-control form-control-sm" value={link} readOnly />
-                                <button className="btn btn-sm btn-primary" onClick={() => navigator.clipboard.writeText(link)}>Copy</button>
-                            </div>
-                            <div className="d-flex gap-2 mt-2">
-                                <Link href="#" className="btn btn-xs bg-facebook text-white"><FaFacebookF /></Link>
-                                <Link href="#" className="btn btn-xs bg-whatsapp text-white"><FaWhatsapp /></Link>
-                                <Link href="#" className="btn btn-xs bg-twitter text-white"><FaTwitter /></Link>
-                                <Link href="#" className="btn btn-xs bg-linkedin text-white"><FaLinkedinIn /></Link>
-                            </div>
+                    <DropdownMenu className="dropdown-menu dropdown-menu-size-sm shadow px-3 rounded" aria-labelledby="dropdownShare5">
+                        <h6>Share a link to this question</h6>
+
+
+                        <div className="input-group mt-2">
+                            <input className="form-control form-control-sm" type="text" value="https:q&amp;a.com//556dd//gmail" placeholder="" />
+                            <button className="btn btn-sm btn-primary mb-0">Copy</button>
                         </div>
-                    )}
-                </div>
+
+
+                        <ul className="list-inline mt-2 mb-0">
+                            <li className="list-inline-item"> <Link className="btn btn-xs btn-icon mb-0 bg-facebook" href="#"><FaFacebookF /></Link> </li>
+                            <li className="list-inline-item"> <Link className="btn btn-xs btn-icon mb-0 bg-whatsapp" href="#"><FaWhatsapp /></Link> </li>
+                            <li className="list-inline-item"> <Link className="btn btn-xs btn-icon mb-0 bg-twitter" href="#"><FaXTwitter /></Link> </li>
+                            <li className="list-inline-item"> <Link className="btn btn-xs btn-icon mb-0 bg-linkedin" href="#"><FaLinkedinIn /></Link> </li>
+                        </ul>
+                    </DropdownMenu>
+                </Dropdown>
 
                 <button
                     onClick={() => setToggle(!toggle)}
@@ -183,7 +183,7 @@ const AnswerCard2 = () => {
                                     <h6 className="mb-0"><Link href="#!">Louis Ferguson</Link></h6>
                                     <div className="hstack gap-4 flex-wrap">
                                         <small>8 hour ago</small>
-                                        <Link href="#" className="btn btn-sm btn-link p-0 text-primary-hover mb-0"><FaReply className="me-1"/>Reply</Link>
+                                        <Link href="#" className="btn btn-sm btn-link p-0 text-primary-hover mb-0"><FaReply className="me-1" />Reply</Link>
                                     </div>
                                     <p className="heading-color mb-0 mt-2">If you want to delete old records you can create a file for the task</p>
                                 </div>

@@ -1,6 +1,6 @@
-import { Col, Container, Row } from 'react-bootstrap'
-import { BiCloudUpload } from 'react-icons/bi'
-import ReactQuill from 'react-quill-new';
+import QuillTool from '@/component/QuillTool';
+import { Col, Container, Row } from 'react-bootstrap';
+import { BiCloudUpload } from 'react-icons/bi';
 
 const Questions = () => {
     return (
@@ -46,41 +46,7 @@ const Questions = () => {
                                 <div className="mb-3">
                                     <label className="form-label form-label-dark">Description <span className="text-danger">*</span></label>
 
-
-                                    <div className="bg-light border border-bottom-0 rounded-top py-3" id="quilltoolbar">
-                                        <span className="ql-formats">
-                                            <select className="ql-size"></select>
-                                        </span>
-                                        <span className="ql-formats">
-                                            <button className="ql-bold"></button>
-                                            <button className="ql-italic"></button>
-                                            <button className="ql-underline"></button>
-                                            <button className="ql-strike"></button>
-                                        </span>
-                                        <span className="ql-formats">
-                                            <select className="ql-color"></select>
-                                            <select className="ql-background"></select>
-                                        </span>
-                                        <span className="ql-formats">
-                                            <button className="ql-code-block"></button>
-                                        </span>
-                                        <span className="ql-formats">
-                                            <button className="ql-list" value="ordered"></button>
-                                            <button className="ql-list" value="bullet"></button>
-                                            <button className="ql-indent" value="-1"></button>
-                                            <button className="ql-indent" value="+1"></button>
-                                        </span>
-                                        <span className="ql-formats">
-                                            <button className="ql-link"></button>
-                                            <button className="ql-image"></button>
-                                        </span>
-                                        <span className="ql-formats">
-                                            <button className="ql-clean"></button>
-                                        </span>
-                                    </div>
-
-
-                                    <div className="quilleditor border rounded-bottom h-200px overflow-hidden"></div>
+                                    <QuillTool className='bg-light  h-200px border rounded-bottom border-bottom rounded-top rounded-top overflow-hidden' />
                                     <small>Please choose an appropriate title for the equation so it can be answered easily. </small>
                                 </div>
 
@@ -137,8 +103,8 @@ const Questions = () => {
                         </div>
                     </Col>
                 </Row>
-            </Container>
-        </section>
+            </Container >
+        </section >
     )
 }
 
