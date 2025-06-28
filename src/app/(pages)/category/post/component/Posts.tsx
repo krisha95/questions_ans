@@ -124,7 +124,7 @@ const Posts = () => {
 
           <div className="hstack gap-3 flex-wrap align-items-start mt-3">
             <div className="border px-2 py-0 rounded-1 d-flex align-items-center gap-1">
-              <Form.Check
+              <FormCheck
                 type="radio"
                 name="vote1"
                 id="btnradioT1"
@@ -166,33 +166,33 @@ const Posts = () => {
                 </InputGroup>
                 <ul className="list-inline mb-0 mt-2">
                   <li className="list-inline-item">
-                    <a
+                    <Link
                       className="btn btn-xs btn-icon mb-0 bg-facebook"
                       href="#"
                     >
                       <FaFacebookF />
-                    </a>
+                    </Link>
                   </li>
                   <li className="list-inline-item">
-                    <a
+                    <Link
                       className="btn btn-xs btn-icon mb-0 bg-whatsapp"
                       href="#"
                     >
                       <FaWhatsapp />
-                    </a>
+                    </Link>
                   </li>
                   <li className="list-inline-item">
-                    <a className="btn btn-xs btn-icon mb-0 bg-twitter" href="#">
+                    <Link className="btn btn-xs btn-icon mb-0 bg-twitter" href="#">
                       <FaXTwitter />
-                    </a>
+                    </Link>
                   </li>
                   <li className="list-inline-item">
-                    <a
+                    <Link
                       className="btn btn-xs btn-icon mb-0 bg-linkedin"
                       href="#"
                     >
                       <FaLinkedinIn />
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </Dropdown.Menu>
@@ -201,7 +201,7 @@ const Posts = () => {
 
           <Form className="bg-light d-sm-flex rounded-2 p-3 mt-3">
             <div className="avatar avatar-sm flex-shrink-0 me-2">
-              <a href="#">
+              <Link href="#">
                 <Image
                   src={avatar09}
                   alt="avatar"
@@ -209,7 +209,7 @@ const Posts = () => {
                   width={40}
                   height={40}
                 />
-              </a>
+              </Link>
             </div>
             <InputGroup className="align-items-start">
               <Form.Control
@@ -489,7 +489,7 @@ const Posts = () => {
 
           <div className="hstack gap-3 flex-wrap align-items-start mt-3">
             <div className="border px-2 py-0 rounded-1 d-flex align-items-center gap-1">
-              <Form.Check
+              <FormCheck
                 type="radio"
                 id="btnradioT3"
                 name="vote3"

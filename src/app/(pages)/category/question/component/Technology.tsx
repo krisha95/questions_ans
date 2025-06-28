@@ -42,10 +42,10 @@ const Technology = () => {
             <CardFooter className="py-0">
                 <Nav variant="tabs" className="nav-bottom-line nav-responsive mb-0 border-0">
                     <NavItem>
-                        <NavLink href="/category/post" active>Posts</NavLink>
+                        <NavLink href="/category/post" >Posts</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="/category/question">Questions</NavLink>
+                        <NavLink href="/category/question" active>Questions</NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink href="/category/detail" >About</NavLink>

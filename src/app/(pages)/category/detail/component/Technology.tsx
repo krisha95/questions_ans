@@ -3,9 +3,9 @@ import categoryImg from "@/assets/images/elements/category/11.svg";
 import Image from 'next/image';
 import { Button, Card, CardBody, CardFooter, Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem, NavLink } from 'react-bootstrap';
 import { BiDotsHorizontalRounded } from "react-icons/bi";
-import { BsFilePost, BsFlag, BsOctagon, BsPersonPlusFill, BsShare } from "react-icons/bs";
-import Details from "./Details";
+import { BsFilePost, BsFlag, BsPersonPlusFill, BsShare, BsXOctagon } from "react-icons/bs";
 import { FaPlus } from "react-icons/fa6";
+import Details from "./Details";
 
 const Technology = () => {
     return (
@@ -34,7 +34,7 @@ const Technology = () => {
                                     </DropdownToggle>
                                     <DropdownMenu align="end" className="min-w-auto" aria-labelledby="profileAction2">
                                         <DropdownItem href="#"><BsShare className="me-2" />Share</DropdownItem>
-                                        <DropdownItem href="#"><BsOctagon className="me-2" />Mute this category</DropdownItem>
+                                        <DropdownItem href="#"><BsXOctagon className="me-2" />Mute this category</DropdownItem>
                                         <DropdownItem href="#"><BsFlag className="me-2" />Report</DropdownItem>
                                     </DropdownMenu>
                                 </Dropdown>
