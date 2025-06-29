@@ -49,6 +49,7 @@ import Technology from "./Technology";
 const Posts = () => {
   const [openImage, setOpenImage] = useState(false);
   const [open, setOpen] = useState(false);
+
   return (
     <Col lg={8} xxl={7}>
       <div className="vstack gap-4">
@@ -79,7 +80,7 @@ const Posts = () => {
             </div>
             <div className="ms-2">
               <h6 className="mb-0">
-                <a href="#">Frances Guerrero</a>
+                <Link href="#">Frances Guerrero</Link>
               </h6>
               <ul className="nav nav-divider small">
                 <li className="nav-item">Social media Marketing pro</li>
@@ -182,7 +183,10 @@ const Posts = () => {
                     </Link>
                   </li>
                   <li className="list-inline-item">
-                    <Link className="btn btn-xs btn-icon mb-0 bg-twitter" href="#">
+                    <Link
+                      className="btn btn-xs btn-icon mb-0 bg-twitter"
+                      href="#"
+                    >
                       <FaXTwitter />
                     </Link>
                   </li>
