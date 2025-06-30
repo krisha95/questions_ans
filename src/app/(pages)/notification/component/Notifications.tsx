@@ -9,6 +9,7 @@ import avatar09 from "@/assets/images/avatar/09.jpg";
 import Image from "next/image";
 import Link from "next/link";
 import { Card, Col, Container, Row } from "react-bootstrap";
+import { BiCaretUp } from "react-icons/bi";
 import { BsFillCaretUpFill } from "react-icons/bs";
 
 const Notifications = () => {
@@ -114,7 +115,7 @@ const Notifications = () => {
                     <div className="card-body p-4 ps-sm-0">
                       <div className="d-flex align-items-center flex-wrap mb-2">
                         <h6 className="mb-0 me-1">
-                          <a href="#">Larry Lawson</a>
+                          <Link href="#">Larry Lawson</Link>
                         </h6>
                         <Link href="#" className="text-primary-hover fw-normal">
                           @laryson5486
@@ -123,37 +124,37 @@ const Notifications = () => {
 
                       <p className="small text-primary-hover">
                         Mentioned you in{" "}
-                        <a href="#" className="heading-color fw-semibold">
+                        <Link href="#" className="heading-color fw-semibold">
                           What can I do to add this count, and make the right
                           data frame?
-                        </a>
+                        </Link>
                       </p>
                       <p className="small text-primary-hover">
-                        <a href="#" className="heading-color fw-semibold">
+                        <Link href="#" className="heading-color fw-semibold">
                           @LoriStevens
-                        </a>{" "}
+                        </Link>{" "}
                         That's for you.
                       </p>
 
                       <div className="hstack gap-2 gap-sm-3 small">
-                        <a
+                        <Link
                           href="#"
                           className="fw-normal text-primary-hover mb-0"
                         >
                           Upvote
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                           href="#"
                           className="fw-normal text-primary-hover mb-0 active"
                         >
                           Replied
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                           href="#"
                           className="fw-normal text-primary-hover mb-0"
                         >
                           Share
-                        </a>
+                        </Link>
                       </div>
 
                       <div className="comment-item d-flex mt-4 pt-2">
@@ -168,9 +169,9 @@ const Notifications = () => {
                         <div className="ms-3">
                           <h6 className="mb-2">Lori Stevens</h6>
                           <p className="small mb-2">
-                            <a href="#" className="fw-semibold">
+                            <Link href="#" className="fw-semibold">
                               @laryson5486
-                            </a>{" "}
+                            </Link>{" "}
                             Upvoted. congratulation on the launch 🚀
                           </p>
                           <small>5 day ago</small>
@@ -181,9 +182,9 @@ const Notifications = () => {
                 </Row>
               </Card>
 
-              <div className="card p-0">
-                <div className="row g-0">
-                  <div className="col-sm-2 text-center mt-4">
+              <Card className="p-0">
+                <Row className="g-0">
+                  <Col sm={2} className="text-center mt-4">
                     <div className="border rounded text-center w-60px p-1 mx-auto">
                       <input
                         type="radio"
@@ -200,9 +201,9 @@ const Notifications = () => {
 
                       <h6 className="mb-0 px-2 vote-count">145</h6>
                     </div>
-                  </div>
+                  </Col>
 
-                  <div className="col-sm-10">
+                  <Col sm={10}>
                     <div className="card-body p-4 ps-sm-0">
                       <ul className="avatar-group mb-2">
                         <li className="avatar avatar-xs me-2">
@@ -222,14 +223,14 @@ const Notifications = () => {
                       </ul>
 
                       <div className="mb-2 small text-primary-hover">
-                        <a href="#" className="heading-color fw-semibold">
+                        <Link href="#" className="heading-color fw-semibold">
                           Larry Lawson 💖 + 1 other
-                        </a>{" "}
+                        </Link>{" "}
                         Upvoted on your comment{" "}
-                        <a href="#" className="heading-color fw-semibold">
+                        <Link href="#" className="heading-color fw-semibold">
                           What can I do to add this count, and make the right
                           data frame?
-                        </a>
+                        </Link>
                       </div>
 
                       <p className="mb-0 small">
@@ -238,13 +239,13 @@ const Notifications = () => {
                         me so. It drew a hill from me.🔥
                       </p>
                     </div>
-                  </div>
-                </div>
-              </div>
+                  </Col>
+                </Row>
+              </Card>
 
-              <div className="card p-0">
-                <div className="row g-0">
-                  <div className="col-sm-10 ms-auto">
+              <Card className="p-0">
+                <Row className="g-0">
+                  <Col sm={10} className="ms-auto">
                     <div className="card-body p-4 ps-sm-0">
                       <div className="avatar avatar-xs me-2">
                         <Image
@@ -263,17 +264,17 @@ const Notifications = () => {
                         </Link>{" "}
                         Started following you
                       </div>
-                      <a href="#" className="btn btn-sm btn-light mb-0">
+                      <Link href="#" className="btn btn-sm btn-light mb-0">
                         Follow back
-                      </a>
+                      </Link>
                     </div>
-                  </div>
-                </div>
-              </div>
+                  </Col>
+                </Row>
+              </Card>
 
-              <div className="card p-0">
-                <div className="row g-0">
-                  <div className="col-sm-2 text-center mt-4">
+              <Card className="p-0">
+                <Row className="g-0">
+                  <Col sm={2} className="text-center mt-4">
                     <div className="avatar avatar-lg flex-shrink-0">
                       <Image
                         className="avatar-img rounded-circle"
@@ -293,30 +294,30 @@ const Notifications = () => {
                         className="btn btn-vote mb-0 p-0"
                         htmlFor="btnradioT3"
                       >
-                        <i className="bi bi-caret-up-fill fs-5"></i>
+                        <BsFillCaretUpFill className="fs-5" />
                       </label>
 
                       <h6 className="mb-0 px-2 vote-count">10</h6>
                     </div>
-                  </div>
+                  </Col>
 
-                  <div className="col-sm-10">
+                  <Col sm={10}>
                     <div className="card-body p-4 ps-sm-0">
                       <div className="d-flex align-items-center flex-wrap mb-2">
                         <h6 className="mb-0 me-1">
-                          <a href="#">Larry Lawson</a>
+                          <Link href="#">Larry Lawson</Link>
                         </h6>
-                        <a href="#" className="text-primary-hover fw-normal">
+                        <Link href="#" className="text-primary-hover fw-normal">
                           @laryson5486
-                        </a>
+                        </Link>
                       </div>
 
                       <div className="mb-2 small text-primary-hover">
                         Started a discussion{" "}
-                        <a href="#" className="heading-color fw-semibold">
+                        <Link href="#" className="heading-color fw-semibold">
                           What can I do to add this count, and make the right
                           data frame?
-                        </a>
+                        </Link>
                       </div>
 
                       <p className="small">
@@ -343,9 +344,9 @@ const Notifications = () => {
                         </Link>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
+                  </Col>
+                </Row>
+              </Card>
 
               <Card className="p-0">
                 <Row className="g-0">
@@ -446,9 +447,9 @@ const Notifications = () => {
                         </Link>
                       </p>
                       <p className="small text-primary-hover">
-                        <a href="#" className="heading-color fw-semibold">
+                        <Link href="#" className="heading-color fw-semibold">
                           @LoriStevens
-                        </a>{" "}
+                        </Link>{" "}
                         I'm sure you will succeed. 🥰
                       </p>
 
