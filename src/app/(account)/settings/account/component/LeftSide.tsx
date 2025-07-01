@@ -1,11 +1,36 @@
+'use client'
 import React from 'react'
+import Link from 'next/link'
+import { Col } from 'react-bootstrap'
 
-const LeftSide = () => {
+type Props = {
+    activeTab: string
+    setActiveTab: (tab: string) => void
+}
+
+const tabList = [
+    { key: 'account', label: 'Account' },
+    { key: 'privacy', label: 'Privacy' },
+    { key: 'email', label: 'Email & Notification' },
+    { key: 'display', label: 'Display' },
+    { key: 'deactivate', label: 'Deactivate Account' },
+]
+
+const footerLinks = [
+    { href: "/about", label: "About" },
+    { href: "/index-ticket", label: "Ticket" },
+    { href: "#", label: "Terms" },
+    { href: "/forum/index-forum", label: "Forum" },
+    { href: "/help-center/detail", label: "Help center" },
+    { href: "/index-discussion", label: "Discussion" },
+    { href: "/blog", label: "Blog" },
+]
+
+const LeftSide = ({ activeTab, setActiveTab }: Props) => {
     return (
-        <div className="col-lg-4 col-xl-3">
+        <Col lg={4} xl={3}>
             <nav className="navbar navbar-light navbar-expand-lg mx-0">
                 <div className="offcanvas offcanvas-start" tabIndex={-1} id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-
                     <div className="offcanvas-header">
                         <h5 className="offcanvas-title" id="offcanvasNavbarLabel">Setting tabs</h5>
                         <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -13,55 +38,35 @@ const LeftSide = () => {
                     <div className="offcanvas-body p-0">
                         <div className="card card-body">
                             <ul className="nav nav-tabs nav-pills nav-pills-primary-soft flex-column gap-2 border-0">
-                                <li className="nav-item">
-                                    <a className="nav-link mb-0 active" href="#nav-setting-tab-1" data-bs-toggle="tab">Account</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link mb-0" href="#nav-setting-tab-2" data-bs-toggle="tab">Privacy</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link mb-0" href="#nav-setting-tab-3" data-bs-toggle="tab">Email & Notification</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link mb-0" href="#nav-setting-tab-4" data-bs-toggle="tab">Display</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link mb-0" href="#nav-setting-tab-5" data-bs-toggle="tab">Deactivate Account</a>
-                                </li>
+                                {tabList.map(tab => (
+                                    <li className="nav-item" key={tab.key}>
+                                        <button
+                                            className={`nav-link mb-0${activeTab === tab.key ? ' active' : ''}`}
+                                            style={{border: 'none', textAlign: 'left', width: '100%' }}
+                                            onClick={() => setActiveTab(tab.key)}
+                                            type="button"
+                                        >
+                                            {tab.label}
+                                        </button>
+                                    </li>
+                                ))}
                             </ul>
                         </div>
-
                     </div>
-
                     <ul className="nav justify-content-center mt-4">
-                        <li className="nav-item">
-                            <a className="nav-link small" href="about.html">About</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link small" href="index-ticket.html">Ticket</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link small" href="#">Terms</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link small" href="index-forum.html">Forum</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link small" href="index-help-center.html">Help center</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link small" href="index-discussion.html">Discussion</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link small" href="blog.html">Blog</a>
-                        </li>
+                        {footerLinks.map(link => (
+                            <li className="nav-item" key={link.href}>
+                                <Link className="nav-link small" href={link.href}>{link.label}</Link>
+                            </li>
+                        ))}
                     </ul>
-
-
-                    <div className="text-primary-hover text-center small mt-2"> Copyrights <a href="#" className="text-body">©2025 Q&A</a>. </div>
+                    <div className="text-primary-hover text-center small mt-2">
+                        Copyrights <Link href="#" className="text-body">©{new Date().getFullYear()} Q&amp;A</Link>.
+                    </div>
                 </div>
             </nav>
-        </div>)
+        </Col>
+    )
 }
 
 export default LeftSide

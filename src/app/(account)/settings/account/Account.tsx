@@ -7,7 +7,7 @@ import { FaEyeSlash, FaFacebookF, FaGoogle, FaLinkedinIn, FaPlus } from "react-i
 
 const Account = () => {
     return (
-        <div className="tab-pane show active fade" id="nav-setting-tab-1">
+        <>
             <Card className="card mb-4 p-0">
                 <div className="card-header border-bottom p-4">
                     <h1 className="h4 mb-1 card-title">Account Settings</h1>
@@ -170,13 +170,10 @@ const Account = () => {
                 </div>
 
 
-
                 <div className="card-footer text-end p-4 pt-0">
                     <button type="submit" className="btn btn-primary mb-0">Update password</button>
                 </div>
             </div>
-
-
 
             <div className="card p-0">
 
@@ -222,7 +219,7 @@ const Account = () => {
 
             </div>
 
-        </div>
+        </>
     )
 }
 
