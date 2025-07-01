@@ -92,7 +92,7 @@ const PollCard = () => {
 
                     <button className="btn btn-sm btn-light mb-0">Comment (1)</button>
 
-                    <Dropdown drop="start" className="ms-sm-auto no-before-icon">
+                    <Dropdown drop="start" className="no-before-icon">
                         <Dropdown.Toggle
                             size="sm"
                             variant="light"
@@ -119,6 +119,8 @@ const PollCard = () => {
                             </ul>
                         </Dropdown.Menu>
                     </Dropdown>
+
+                
 
                     <button
                         onClick={() => setCollapseShow(!collapseShow)}

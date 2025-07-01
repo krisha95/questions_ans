@@ -17,6 +17,7 @@ import avatar8 from "@/assets/images/avatar/08.jpg";
 import avatar9 from "@/assets/images/avatar/09.jpg";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import { Col, Container, Row } from "react-bootstrap";
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
 type PostType = {
     id: number;
@@ -168,13 +169,27 @@ const Banner = () => {
                                 ))}
                             </Swiper>
 
-                            <div className="d-flex justify-content-between position-absolute top-50 start-0 w-100 px-2">
-                                <button className="btn btn-white btn-icon rounded-circle mb-0 swiper-button-prev">
-                                    <BiLeftArrowAlt />
-                                </button>
-                                <button className="btn btn-white btn-icon rounded-circle mb-0 swiper-button-next">
-                                    <BiRightArrowAlt />
-                                </button>
+        
+                            <div className="d-flex justify-content-between position-absolute top-50 start-0 w-100 px-3 z-index-9">
+                                <div
+                                    className="btn btn-white btn-icon rounded-circle mb-0 swiper-button-prev"
+                                    tabIndex={-1}
+                                    role="button"
+                                    aria-label="Previous slide"
+                                    aria-disabled="true"
+                                >
+                                    <BsArrowLeft />
+                                </div>
+
+                                <div
+                                    className="btn btn-white btn-icon rounded-circle mb-0 swiper-button-next"
+                                    tabIndex={0}
+                                    role="button"
+                                    aria-label="Next slide"
+                                    aria-disabled="false"
+                                >
+                                    <BsArrowRight />
+                                </div>
                             </div>
                         </div>
                     </Col>
