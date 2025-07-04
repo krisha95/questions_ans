@@ -103,7 +103,7 @@ const QuestionSlider = () => {
                                     <div className="position-relative z-1">
                                         <Card.Title>
                                             <Link
-                                                href="/answer-detail-minimal"
+                                                href="/que-ans/detail-minimal"
                                                 className="stretched-link text-decoration-none"
                                             >
                                                 {question.title}

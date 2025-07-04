@@ -12,27 +12,27 @@ import avatar9 from "@/assets/images/avatar/09.jpg";
 const trendingQuestions = [
   {
     title: "Product Subtract Button is not working perfectly ecommerce app?",
-    link: "/answer-detail-minimal",
+    link: "/que-ans/detail-minimal",
     answers: 4,
   },
   {
     title: "What can I do to add this count, and make the right data frame?",
-    link: "/answer-detail-minimal",
+    link: "/que-ans/detail-minimal",
     answers: 10,
   },
   {
     title: "What is the importance of customer feedback in business?",
-    link: "/answer-detail-minimal",
+    link: "/que-ans/detail-minimal",
     answers: 5,
   },
   {
     title: "Explain the concept of object-oriented programming (OOP).",
-    link: "/answer-detail-minimal",
+    link: "/que-ans/detail-minimal",
     answers: 8,
   },
   {
     title: "How does digital marketing impact business growth?",
-    link: "/answer-detail-minimal",
+    link: "/que-ans/detail-minimal",
     answers: 11,
   },
 ];

@@ -1,5 +1,4 @@
 import { Badge, Card, CardBody, CardFooter, CardText, CardTitle, Col, Container, Row } from 'react-bootstrap';
-
 import { BsFillCalendar2PlusFill } from 'react-icons/bs';
 import blog6 from '@/assets/images/blog/03.jpg';
 import blog1 from '@/assets/images/blog/04.jpg';
@@ -144,7 +143,6 @@ const Blogs = () => {
                         </Col>
                     ))}
                 </Row>
-
                 <Paginations />
             </Container>
         </section>

@@ -99,7 +99,7 @@ const SeeMoreCard = () => {
         </div>
 
         <h5 className="card-title mb-1">
-          <Link href="/answer-detail-minimal">
+          <Link href="/que-ans/detail-minimal">
             Find highest/lowest value by the data of two different tables in a
             SQL
           </Link>
@@ -204,7 +204,7 @@ const SeeMoreCard = () => {
             <ul className="nav nav-divider-slash small heading-color align-items-center">
               <li className="nav-item">
                 <Link
-                  href="/answer-detail-minimal"
+                  href="/que-ans/detail-minimal"
                   className="p-0 mb-0 text-primary-hover"
                 >
                   10 Answer

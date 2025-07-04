@@ -6,41 +6,47 @@ import QuestionsBox from "./component/QuestionsBox";
 import RightSidebar from "./component/RightSideBar";
 import SuggestAns from "./component/SuggestAns";
 import Tabes from "./component/Tabes";
+import HomeNavbar from "@/component/navbar/HomeNavbar";
+import Footer from "../index/components/Footer";
 
 const page = () => {
   return (
-    <main>
-      <section className="pt-8">
-        <Container>
-          <Row className="g-4">
-            <Col xl={9}>
-              <div className="vstack gap-4">
-                <QuestionsBox />
-                <Tabes />
-                <AnswerCard />
-                <AnswerCard2 />
-                <SuggestAns />
-                <div
-                  className="alert alert-success d-md-flex align-items-center"
-                  role="alert"
-                >
-                  <a href="#" className="btn btn-sm btn-dark mb-2 mb-md-0">
-                    Sign up for free
-                  </a>
-                  <p className="mb-0 ms-md-3">
-                    To join this conversation on Q&A. Already have an account?{" "}
-                    <Link href="#" className="fw-semibold">
-                      Sign in
-                    </Link>
-                  </p>
+    <>
+      <HomeNavbar />
+      <main>
+        <section className="pt-8">
+          <Container>
+            <Row className="g-4">
+              <Col xl={9}>
+                <div className="vstack gap-4">
+                  <QuestionsBox />
+                  <Tabes />
+                  <AnswerCard />
+                  <AnswerCard2 />
+                  <SuggestAns />
+                  <div
+                    className="alert alert-success d-md-flex align-items-center"
+                    role="alert"
+                  >
+                    <a href="#" className="btn btn-sm btn-dark mb-2 mb-md-0">
+                      Sign up for free
+                    </a>
+                    <p className="mb-0 ms-md-3">
+                      To join this conversation on Q&A. Already have an account?{" "}
+                      <Link href="#" className="fw-semibold">
+                        Sign in
+                      </Link>
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </Col>
-            <RightSidebar />
-          </Row>
-        </Container>
-      </section>
-    </main>
+              </Col>
+              <RightSidebar />
+            </Row>
+          </Container>
+        </section>
+      </main>
+      <Footer />
+    </>
   );
 };
 

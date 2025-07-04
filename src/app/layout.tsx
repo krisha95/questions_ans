@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@/assets/scss/style.scss'
+import '@/assets/css/style.css'
 import '@/assets/vendor/font-awesome/css/all.min.css'
 import "swiper/css";
 import "swiper/css/navigation";

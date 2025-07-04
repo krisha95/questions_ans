@@ -9,7 +9,6 @@ import avatar09 from "@/assets/images/avatar/09.jpg";
 import Image from "next/image";
 import Link from "next/link";
 import { Card, Col, Container, Row } from "react-bootstrap";
-import { BiCaretUp } from "react-icons/bi";
 import { BsFillCaretUpFill } from "react-icons/bs";
 
 const Notifications = () => {

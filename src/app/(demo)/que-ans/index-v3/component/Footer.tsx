@@ -1,11 +1,11 @@
 "use client"
-import React from 'react';
+import grFlag from "@/assets/images/flags/gr.svg";
+import spFlag from "@/assets/images/flags/sp.svg";
+import ukFlag from "@/assets/images/flags/uk.svg";
 import Image, { StaticImageData } from 'next/image';
-import ukFlag from "@/assets/images/flags/uk.svg"
-import grFlag from "@/assets/images/flags/gr.svg"
-import spFlag from "@/assets/images/flags/sp.svg"
 import Link from 'next/link';
-import { Col, Container, Dropdown, DropdownItem, DropdownToggle, Row } from 'react-bootstrap';
+import React from 'react';
+import { Col, Container, Dropdown, Row } from 'react-bootstrap';
 import { FaGlobe } from 'react-icons/fa6';
 
 type FooterLink = {

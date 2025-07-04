@@ -191,7 +191,9 @@ type ConversationProps = {
 
 const Conversation = ({ activeChatId }: ConversationProps) => {
     const tab = conversationTabs.find(t => t.id === activeChatId);
-    if (!tab) return <Col lg={8} xl={6} xxl={8}>No conversation found.</Col>;
+    if (!tab) return null;
+
+
 
     return (
         <Col lg={8} xl={6} xxl={8}>
@@ -250,7 +252,6 @@ const Conversation = ({ activeChatId }: ConversationProps) => {
                                 <div className="text-center small my-2">Jul 16, 2022, 06:15 am</div>
                                 {tab.messages.map((msg, idx) => (
                                     <React.Fragment key={msg.id}>
-                                        {/* Left message */}
                                         {msg.sender === 'other' && (
                                             <div className="d-flex mb-3 mb-sm-1">
                                                 <div className="flex-shrink-0 avatar avatar-xs me-2">

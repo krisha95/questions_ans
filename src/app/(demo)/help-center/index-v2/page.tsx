@@ -5,24 +5,30 @@ import LeftSideBar from "./component/LeftSideBar";
 import HelpBox from "./component/HelpBox";
 import Faq from "./component/Faq";
 import Cta from "./component/Cta";
+import NavBar from "../component/NavBar";
+import Footer from "../../que-ans/index/components/Footer";
 
 const page = () => {
   return (
-    <main>
-      <Banner />
-      <section className="pt-0">
-        <Container>
-          <Row>
-            <LeftSideBar />
-            <Col xl={9}>
-              <HelpBox />
-              <Faq />
-              <Cta />
-            </Col>
-          </Row>
-        </Container>
-      </section>
-    </main>
+    <>
+      <NavBar />
+      <main>
+        <Banner />
+        <section className="pt-0">
+          <Container>
+            <Row>
+              <LeftSideBar />
+              <Col xl={9}>
+                <HelpBox />
+                <Faq />
+                <Cta />
+              </Col>
+            </Row>
+          </Container>
+        </section>
+      </main>
+      <Footer />
+    </>
   );
 };
 

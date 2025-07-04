@@ -26,7 +26,7 @@ const Technology = () => {
                     </div>
                     <div className="d-flex mt-3 mt-md-0 ms-md-auto">
                         <Button size="sm" variant="primary-soft" className="mb-0 me-2"><FaPlus className="me-2" />Follow</Button>
-                        <Dropdown>
+                        <Dropdown className="no-after-icon">
                             <DropdownToggle as="button" className="btn btn-sm btn-light btn-icon mb-0 popup-after" id="profileAction2">
                                 <BiDotsHorizontalRounded />
                             </DropdownToggle>

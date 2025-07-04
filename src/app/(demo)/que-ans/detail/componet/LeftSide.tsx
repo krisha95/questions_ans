@@ -77,7 +77,7 @@ const LeftSide = () => {
 
 
                             <li className="nav-item">
-                                <a className="nav-link d-flex align-items-center" href="index-discussion.html">
+                                <a className="nav-link d-flex align-items-center" href="/index-discussion">
                                     <span className="nav-icon">
                                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7 17V17C4.79086 17 3 15.2091 3 13V10.5C3 8.16537 3 6.99805 3.47231 6.11441C3.84525 5.4167 4.4167 4.84525 5.11441 4.47231C5.99805 4 7.16537 4 9.5 4H14.5C16.8346 4 18.0019 4 18.8856 4.47231C19.5833 4.84525 20.1548 5.4167 20.5277 6.11441C21 6.99805 21 8.16537 21 10.5V10.5C21 12.8346 21 14.0019 20.5277 14.8856C20.1548 15.5833 19.5833 16.1548 18.8856 16.5277C18.0019 17 16.8346 17 14.5 17H12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

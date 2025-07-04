@@ -16,11 +16,11 @@ const QuestionsBox = () => {
     return (
         <div className="card overflow-hidden p-0">
             <div className="position-absolute end-0 top-0 m-3">
-                <Dropdown align="end">
+                <Dropdown align="end" className='no-after-icon'>
                     <DropdownToggle
                         variant="light"
                         size="sm"
-                        className="btn-round mb-0 flex-shrink-0 popup-after"
+                        className="btn-round mb-0 flex-shrink-0"
                         id="dropdown-custom"
                     >
                         <BiDotsVerticalRounded />

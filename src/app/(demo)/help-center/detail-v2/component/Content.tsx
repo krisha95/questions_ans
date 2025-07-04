@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { FaThumbsDown, FaThumbsUp } from 'react-icons/fa6'
 
 const Content = () => {
+
     return (
         <>
             <Col lg={9} xl={7} className="order-2 order-lg-1">
@@ -17,7 +18,6 @@ const Content = () => {
                         <p>Welcome to Q&A! We're thrilled to have you on board. This section is designed to help you kickstart your journey with us and ensure a smooth onboarding process. Whether you're a new user or an experienced veteran, this section will provide the essential steps to kickstart your journey.</p>
                         <p className="mb-0">At Q&A, we strive to provide a [brief description of your platform's purpose and mission]. Whether you're a new user or considering joining our community, this section will guide you through the essential steps to make the most of your experience.</p>
                     </div>
-
 
                     <div className="bg-mode rounded p-4 mb-4" id="quick-guide">
                         <h4 className="mb-0">Quick Start Guide</h4>
@@ -75,7 +75,7 @@ const Content = () => {
 
                         <h6 className="mb-1">Installation Guide for Windows:</h6>
                         <div className="d-grid mb-4">
-                            <pre className="bg-dark text-white p-3 rounded mb-0">
+                            <pre className="text-white p-3 rounded mb-0" style={{ backgroundColor: "#343a40" }}>
                                 <code>
                                     $ node-sass [options] &lt;input.scss&gt; [output.css]{'\n'}
                                     $ cat &lt;input.scss&gt; | node-sass &gt; output.css
@@ -85,7 +85,7 @@ const Content = () => {
 
                         <h6 className="mb-1">Installation Guide for macOS:</h6>
                         <div className="d-grid">
-                            <pre className="bg-dark text-white p-3 rounded mb-0">
+                            <pre className="text-white p-3 rounded mb-0" style={{ backgroundColor: "#343a40" }}>
                                 <code>
                                     $ node-sass [options] &lt;input.scss&gt; [output.css]{'\n'}
                                     $ cat &lt;input.scss&gt; | node-sass &gt; output.css

@@ -69,7 +69,7 @@ const Qutions = () => {
           <div className="vr"></div>
           <div className="card-body p-3 p-sm-4">
             <h5 className="card-title mb-2 mb-sm-1">
-              <Link href="/answer-detail-minimal">
+              <Link href="/que-ans/detail-minimal">
                 Explain the concept of artificial intelligence (AI)?
               </Link>
             </h5>

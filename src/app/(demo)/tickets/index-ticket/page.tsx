@@ -3,15 +3,19 @@ import Hero from './component/Hero'
 import Solution from './component/Solution'
 import Featured from './component/Featured'
 import Faqs from './component/Faqs'
+import NavBar from '../component/NavBar'
 
 const page = () => {
     return (
-        <main className="bg-mode">
-            <Hero />
-            <Solution />
-            <Featured />
-            <Faqs />
-        </main>
+        <>
+            <NavBar />
+            <main className="bg-mode">
+                <Hero />
+                <Solution />
+                <Featured />
+                <Faqs />
+            </main>
+        </>
     )
 }
 

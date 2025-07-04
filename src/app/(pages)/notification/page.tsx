@@ -1,12 +1,16 @@
 import React from 'react'
 import Notifications from './component/Notifications'
+import Navbar2 from '@/component/navbar/Navbar2'
 
-const page = () => {
+const Page = () => {
     return (
-        <main>
-            <Notifications />
-        </main>
+        <>
+            <Navbar2 />
+            <main>
+                <Notifications />
+            </main>
+        </>
     )
 }
 
-export default page
+export default Page

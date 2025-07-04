@@ -219,29 +219,16 @@ const AnswerDetail = () => {
               Load more replies...
             </a>
           </li>
-        </ul>
-
-        <Form className="bg-light d-sm-flex rounded-2 p-3 mt-3">
+        </ul> 
+        <form className="bg-light d-sm-flex rounded-2 p-3 mt-3">
           <div className="avatar avatar-sm flex-shrink-0 me-2">
-            <Image
-              src={avatar09}
-              alt="avatar"
-              className="avatar-img rounded-circle"
-              width={32}
-              height={32}
-            />
+            <Link href="#"> <Image className="avatar-img rounded-circle" src={avatar09} alt="" /> </Link>
           </div>
-          <InputGroup>
-            <Form.Control
-              as="textarea"
-              rows={2}
-              placeholder="Add a comment..."
-            />
-            <Button variant="primary" className="mb-0 rounded">
-              Post
-            </Button>
-          </InputGroup>
-        </Form>
+          <div className="input-group align-items-start">
+            <textarea className="form-control me-2 rounded" id="commentTextarea3" rows={2} placeholder="Add a comment..." spellCheck="false"></textarea>
+            <button type="button" className="btn btn-primary mb-0 rounded">Post</button>
+          </div>
+        </form>
       </Card.Body>
     </Card >
   );

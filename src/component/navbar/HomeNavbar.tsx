@@ -10,52 +10,79 @@ import { FaToggleOff } from 'react-icons/fa6'
 import CustomeTheme from '../CustomeTheme'
 import AskQuestionModal from './component/AskQuestionModal'
 import Notification from './component/Notification'
+import { Container, NavbarCollapse } from "react-bootstrap"
 
 const HomeNavbar = () => {
     const [showAskModal, setShowAskModal] = useState(false)
+    const [openMenu, setopenMenu] = useState(false)
 
     useEffect(() => {
+        const isDesktop = () => window.innerWidth >= 992;
+
+        const handleMouseEnter = (dropdown: Element) => {
+            const toggle = dropdown.querySelector('.dropdown-toggle');
+            const menu = dropdown.querySelector('.dropdown-menu');
+
+            dropdown.classList.add('show');
+            toggle?.classList.add('show');
+            menu?.classList.add('show');
+            menu?.setAttribute('data-bs-popper', 'static');
+        };
+
+        const handleMouseLeave = (dropdown: Element) => {
+            const toggle = dropdown.querySelector('.dropdown-toggle');
+            const menu = dropdown.querySelector('.dropdown-menu');
+
+            dropdown.classList.remove('show');
+            toggle?.classList.remove('show');
+            menu?.classList.remove('show');
+            menu?.removeAttribute('data-bs-popper');
+        };
+
         const dropdowns = document.querySelectorAll('.dropdown');
 
         dropdowns.forEach(dropdown => {
             const toggle = dropdown.querySelector('.dropdown-toggle');
-            const menu = dropdown.querySelector('.dropdown-menu');
 
-            if (!toggle || !menu) return;
+            if (isDesktop()) {
+                dropdown.addEventListener('mouseenter', () => handleMouseEnter(dropdown));
+                dropdown.addEventListener('mouseleave', () => handleMouseLeave(dropdown));
+            }
 
-            const showMenu = () => {
-                dropdown.classList.add('show');
-                toggle.classList.add('show');
-                menu.classList.add('show');
-                menu.setAttribute('data-bs-popper', 'static');
-            };
+            toggle?.addEventListener('click', (e) => {
+                if (isDesktop()) return;
 
-            const hideMenu = () => {
-                dropdown.classList.remove('show');
-                toggle.classList.remove('show');
-                menu.classList.remove('show');
-                menu.removeAttribute('data-bs-popper');
-            };
-
-            dropdown.addEventListener('mouseenter', showMenu);
-            dropdown.addEventListener('mouseleave', hideMenu);
-
-            toggle.addEventListener('click', (e) => {
                 e.preventDefault();
-                const isShown = dropdown.classList.contains('show');
-                if (isShown) {
-                    hideMenu();
+                const menu = dropdown.querySelector('.dropdown-menu');
+                const isOpen = dropdown.classList.contains('show');
+
+                const siblings = Array.from(dropdown.parentElement?.children || []).filter(
+                    el => el !== dropdown && el.classList.contains('dropdown')
+                );
+
+                siblings.forEach(sibling => {
+                    sibling.classList.remove('show');
+                    sibling.querySelector('.dropdown-toggle')?.classList.remove('show');
+                    sibling.querySelector('.dropdown-menu')?.classList.remove('show');
+                });
+
+                if (!isOpen) {
+                    dropdown.classList.add('show');
+                    toggle.classList.add('show');
+                    menu?.classList.add('show');
+                    menu?.setAttribute('data-bs-popper', 'static');
                 } else {
-                    showMenu();
+                    dropdown.classList.remove('show');
+                    toggle.classList.remove('show');
+                    menu?.classList.remove('show');
+                    menu?.removeAttribute('data-bs-popper');
                 }
             });
         });
 
         return () => {
             dropdowns.forEach(dropdown => {
-                const toggle = dropdown.querySelector('.dropdown-toggle');
-                const menu = dropdown.querySelector('.dropdown-menu');
-                if (!toggle || !menu) return;
+                dropdown.replaceWith(dropdown.cloneNode(true));
             });
         };
     }, []);
@@ -136,7 +163,7 @@ const HomeNavbar = () => {
             name: "Category",
             subItems: [
                 { name: "Category", link: "/category" },
-                { name: "Category Detail", link: "/category-detail" },
+                { name: "Category Detail", link: "/category/detail" },
                 { name: "Category Post", link: "/category-post" },
                 { name: "Category Question", link: "/category-question" }
             ]
@@ -153,14 +180,13 @@ const HomeNavbar = () => {
     return (
         <header className="header-sticky header-absolute bg-mode">
             <nav className="navbar navbar-expand-xl">
-                <div className="container">
-
+                <Container>
                     <Link className="navbar-brand me-0" href="/que-ans/index">
-                        <Image className="light-mode-item navbar-brand-item" src={logo} alt="logo" />
-                        <Image className="dark-mode-item navbar-brand-item" src={logoLight} alt="logo" />
+                        <Image className="light-mode-item navbar-brand-item" src={logo} alt="logo" width={100} />
+                        <Image className="dark-mode-item navbar-brand-item" src={logoLight} alt="logo" width={100} />
                     </Link>
 
-                    <div className="navbar-collapse collapse" id="navbarCollapse">
+                    <NavbarCollapse id="navbarCollapse" className={openMenu ? "show" : ""}>
                         <div className="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center">
                             <div className="nav-item w-100 input-bg-light">
                                 <form className="position-relative">
@@ -172,7 +198,7 @@ const HomeNavbar = () => {
                             </div>
                         </div>
 
-                        <ul className="navbar-nav navbar-nav-scroll dropdown-hover ms-auto">
+                        <ul className="navbar-nav navbar-nav-scroll dropdown-hover ms-auto ">
 
                             <li className="nav-item dropdown">
                                 <Link className="nav-link dropdown-toggle" href="#" data-bs-auto-close="outside" data-bs-toggle="dropdown">
@@ -202,7 +228,7 @@ const HomeNavbar = () => {
                                         </li>
                                     ))}
 
-                                    <li><Link className="dropdown-item" href="index-discussion.html">Index Discussion</Link></li>
+                                    <li><Link className="dropdown-item" href="/index-discussion">Index Discussion</Link></li>
                                     <li className="dropdown-divider"></li>
                                     <li>
                                         <Link className="dropdown-item" href="https://q&a.webestica.com/rtl/" target="_blank">
@@ -303,7 +329,7 @@ const HomeNavbar = () => {
                                 <Link className="nav-link" href="/contact">Contact us</Link>
                             </li>
                         </ul>
-                    </div>
+                    </NavbarCollapse>
 
                     <ul className="nav align-items-center dropdown-hover ms-sm-2">
                         <CustomeTheme />
@@ -313,9 +339,8 @@ const HomeNavbar = () => {
                                 Ask question
                             </button>
                         </li>
-
                         <li className="nav-item ms-2">
-                            <button className="navbar-toggler ms-sm-3 p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                            <button onClick={() => setopenMenu(true)} className="navbar-toggler ms-sm-3 p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                                 <span className="navbar-toggler-animation">
                                     <span></span>
                                     <span></span>
@@ -324,7 +349,7 @@ const HomeNavbar = () => {
                             </button>
                         </li>
                     </ul>
-                </div>
+                </Container>
             </nav>
             <AskQuestionModal show={showAskModal} onHide={() => setShowAskModal(false)} />
         </header>

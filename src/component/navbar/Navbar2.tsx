@@ -1,17 +1,52 @@
+"use client"
+import RightSide from "@/app/(demo)/que-ans/index-v3/component/RightSide"
+import avatar1 from "@/assets/images/avatar/01.jpg"
+import logoLight from "@/assets/images/logo-light.svg"
+import logo from "@/assets/images/logo.svg"
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
-import logo from "@/assets/images/logo.svg"
-import logoLight from "@/assets/images/logo-light.svg"
-import avatar1 from "@/assets/images/avatar/01.jpg"
+import { useState } from "react"
+import {
+    Button,
+    Container,
+    Dropdown,
+    Form,
+    FormControl,
+    OverlayTrigger,
+    Tooltip
+} from 'react-bootstrap'
+import {
+    BiInfoCircle
+} from "react-icons/bi"
+import {
+    BsBellFill,
+    BsFillHouseDoorFill,
+    BsFillPatchQuestionFill,
+    BsGear,
+    BsGlobe2,
+    BsPerson,
+    BsPower,
+    BsReceiptCutoff,
+    BsSearch
+} from 'react-icons/bs'
 
 const Navbar2 = () => {
+    const [showSidebar, setShowSidebar] = useState(false)
+    const [expanded, setExpanded] = useState(false)
+
     return (
         <header className="header-sticky header-absolute bg-mode">
             <nav className="navbar navbar-expand-lg">
-                <div className="container">
+                <Container>
+
                     <div>
-                        <button className="navbar-toggler p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <button
+                            className="navbar-toggler p-2"
+                            type="button"
+                            onClick={() => setExpanded(!expanded)}
+                            aria-expanded={expanded}
+                            aria-label="Toggle navigation"
+                        >
                             <span className="navbar-toggler-animation">
                                 <span></span>
                                 <span></span>
@@ -20,114 +55,129 @@ const Navbar2 = () => {
                             <span className="text-body small d-none d-sm-inline-block ms-2">Menu</span>
                         </button>
 
-
-                        <div className="navbar-collapse collapse" id="navbarCollapse">
+                        <div className={`navbar-collapse collapse ${expanded ? 'show' : ''}`} id="navbarCollapse">
                             <ul className="navbar-nav navbar-nav-scroll text-center">
+                                <li className="nav-item">
+                                    <OverlayTrigger placement='bottom' overlay={<Tooltip>Home</Tooltip>}>
+                                        <Link className="nav-link active" href="/que-ans/index-v3">
+                                            <BsFillHouseDoorFill className="fs-4" />
+                                            <span className="nav-text"> Home </span>
+                                        </Link>
+                                    </OverlayTrigger>
+                                </li>
 
                                 <li className="nav-item">
-                                    <a className="nav-link active" href="index-v3.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Home">
-                                        <i className="bi bi-house-door-fill fs-4"></i>
-                                        <span className="nav-text"> Home </span>
-                                    </a>
+                                    <OverlayTrigger placement='bottom' overlay={<Tooltip>Follow</Tooltip>}>
+                                        <Link className="nav-link" href="/profile-follower">
+                                            <BsReceiptCutoff className="fs-4" />
+                                            <span className="nav-text"> Follow </span>
+                                        </Link>
+                                    </OverlayTrigger>
                                 </li>
-
 
                                 <li className="nav-item">
-                                    <a className="nav-link" href="my-profile-follower.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Follow">
-                                        <i className="bi bi-receipt-cutoff fs-4"></i>
-                                        <span className="nav-text"> Follow </span>
-                                    </a>
+                                    <OverlayTrigger placement='bottom' overlay={<Tooltip>Ask Questions</Tooltip>}>
+                                        <Link className="nav-link" href="/que-ans/ask-question">
+                                            <BsFillPatchQuestionFill className="fs-4" />
+                                            <span className="nav-text"> Ask Questions </span>
+                                        </Link>
+                                    </OverlayTrigger>
                                 </li>
-
 
                                 <li className="nav-item">
-                                    <a className="nav-link" href="ask-question.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ask Questions">
-                                        <i className="bi bi-patch-question-fill fs-4"></i>
-                                        <span className="nav-text"> Ask Questions </span>
-                                    </a>
+                                    <OverlayTrigger placement='bottom' overlay={<Tooltip>Language</Tooltip>}>
+                                        <Link className="nav-link" href="#">
+                                            <BsGlobe2 className="fs-4" />
+                                            <span className="nav-text"> Language </span>
+                                        </Link>
+                                    </OverlayTrigger>
                                 </li>
 
-
-                                <li className="nav-item dropdown">
-                                    <a className="nav-link" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Language">
-                                        <i className="bi bi-globe2 fs-4"></i>
-                                        <span className="nav-text"> Language </span>
-                                    </a>
-                                </li>
-
-
-                                <li className="nav-item dropdown">
-                                    <a className="nav-link" href="notification.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Notifications">
-                                        <div className="notif-blink position-relative d-inline-block">
-                                            <span className="badge-notif animation-blink end-0"></span>
-                                            <i className="bi bi-bell-fill fs-4"> </i>
-                                        </div>
-                                        <span className="nav-text"> Notifications </span>
-                                    </a>
+                                <li className="nav-item">
+                                    <OverlayTrigger placement='bottom' overlay={<Tooltip>Notifications</Tooltip>}>
+                                        <Link className="nav-link" href="/notification">
+                                            <div className="notif-blink position-relative d-inline-block">
+                                                <span className="badge-notif animation-blink end-0"></span>
+                                                <BsBellFill className="fs-4" />
+                                            </div>
+                                            <span className="nav-text"> Notifications </span>
+                                        </Link>
+                                    </OverlayTrigger>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
                     <div className="d-flex text-center">
-                        <Link className="navbar-brand" href="index.html" >
-                            <Image className="navbar-brand-item light-mode-item" src={logo} alt="logo" />
-                            <Image className="navbar-brand-item dark-mode-item" src={logoLight} alt="logo" />
+                        <Link className="navbar-brand" href="/que-ans/index">
+                            <Image className="navbar-brand-item light-mode-item" src={logo} alt="logo" width={100} />
+                            <Image className="navbar-brand-item dark-mode-item" src={logoLight} alt="logo" width={100} />
                         </Link>
                     </div>
 
-
                     <ul className="nav ms-sm-3 flex-nowrap align-items-center">
-
                         <li className="nav-item dropdown nav-search">
-                            <a className="nav-link" role="button" href="#" id="navSearch" data-bs-toggle="dropdown" aria-expanded="true" data-bs-auto-close="outside" data-bs-display="static">
-                                <i className="bi bi-search fs-4"> </i>
-                            </a>
-                            <div className="dropdown-menu dropdown-menu-end shadow rounded p-2" aria-labelledby="navSearch" data-bs-popper="none">
-                                <form className="input-group">
-                                    <input className="form-control border-primary" type="search" placeholder="Search..." aria-label="Search" />
-                                    <button className="btn btn-primary m-0" type="submit">Search</button>
-                                </form>
-                            </div>
+                            <Dropdown autoClose="outside" align="end" className="no-after-icon">
+                                <Dropdown.Toggle as={Link} href="#" className="nav-link" id="navSearch">
+                                    <BsSearch className="fs-4" />
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu className="shadow rounded p-2">
+                                    <Form className="input-group">
+                                        <FormControl
+                                            type="search"
+                                            placeholder="Search..."
+                                            className="border-primary"
+                                            aria-label="Search"
+                                        />
+                                        <Button type="submit" className="btn-primary m-0">
+                                            Search
+                                        </Button>
+                                    </Form>
+                                </Dropdown.Menu>
+                            </Dropdown>
                         </li>
-
 
                         <li className="dropdown dropdown-animation d-flex ms-1 ms-sm-3">
-                            <a className="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
-                                <Image className="avatar-img rounded-circle" src={avatar1} alt="avatar" />
-                            </a>
-                            <ul className="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
-
-                                <li className="px-3">
-                                    <div className="d-flex align-items-center">
-
-                                        <div className="avatar me-3">
-                                            <Image className="avatar-img rounded-circle shadow" src={avatar1} alt="avatar" />
+                            <Dropdown autoClose="outside" align="end" className="no-after-icon">
+                                <Dropdown.Toggle as={Link} href="#" className="avatar avatar-sm p-0" id="profileDropdown">
+                                    <Image className="avatar-img rounded-circle" src={avatar1} alt="avatar" />
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu className="dropdown-animation shadow pt-3">
+                                    <li className="px-3">
+                                        <div className="d-flex align-items-center">
+                                            <div className="avatar me-3">
+                                                <Image className="avatar-img rounded-circle shadow" src={avatar1} alt="avatar" />
+                                            </div>
+                                            <div>
+                                                <Link className="h6" href="#">Lori Ferguson</Link>
+                                                <p className="small m-0">example@gmail.com</p>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <a className="h6" href="#">Lori Ferguson</a>
-                                            <p className="small m-0">example@gmail.com</p>
-                                        </div>
-                                    </div>
-                                    <hr />
-                                </li>
-
-                                <li><a className="dropdown-item" href="my-profile.html"><i className="bi bi-person fa-fw me-2"></i>Edit Profile</a></li>
-                                <li><a className="dropdown-item" href="setting.html"><i className="bi bi-gear fa-fw me-2"></i>Account Settings</a></li>
-                                <li><a className="dropdown-item" href="index-help-center.html"><i className="bi bi-info-circle fa-fw me-2"></i>Help</a></li>
-                                <li><a className="dropdown-item bg-danger-soft-hover" href="signin.html"><i className="bi bi-power fa-fw me-2"></i>Sign Out</a></li>
-                            </ul>
+                                        <hr />
+                                    </li>
+                                    <li><Link className="dropdown-item" href="/profile"><BsPerson className="fa-fw me-2" />Edit Profile</Link></li>
+                                    <li><Link className="dropdown-item" href="/settings"><BsGear className="fa-fw me-2" />Account Settings</Link></li>
+                                    <li><Link className="dropdown-item" href="/help-center/index"><BiInfoCircle className="fa-fw me-2" />Help</Link></li>
+                                    <li><Link className="dropdown-item bg-danger-soft-hover" href="/auth/signin"><BsPower className="fa-fw me-2" />Sign Out</Link></li>
+                                </Dropdown.Menu>
+                            </Dropdown>
                         </li>
-
 
                         <li className="nav-item d-none d-md-block">
-                            <button className="btn btn-sm btn-primary mb-0 ms-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Ask Question</button>
+                            <Button
+                                className="btn-sm mb-0 ms-3"
+                                variant="primary"
+                                onClick={() => setShowSidebar(true)}
+                            >
+                                Ask Question
+                            </Button>
                         </li>
                     </ul>
-                </div>
+                </Container>
             </nav>
 
-        </header >
+            <RightSide show={showSidebar} handleClose={() => setShowSidebar(false)} />
+        </header>
     )
 }
 

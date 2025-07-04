@@ -5,12 +5,14 @@ import avatar11 from "@/assets/images/avatar/11.jpg";
 import avatar12 from "@/assets/images/avatar/12.jpg";
 import Image from 'next/image';
 import Link from 'next/link';
-import { Card, Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'react-bootstrap';
+import { Card, Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Offcanvas, OffcanvasBody, OffcanvasHeader } from 'react-bootstrap';
 import { BiDotsVerticalRounded, BiPlus, BiSearch } from 'react-icons/bi';
 
 type SidebarProps = {
     activeChatId: string;
     setActiveChatId: (id: string) => void;
+    show: boolean;
+    onHide: () => void;
 };
 
 const chats = [
@@ -56,7 +58,7 @@ const chats = [
     },
 ];
 
-const Sidebar = ({ activeChatId, setActiveChatId }: SidebarProps) => {
+const Sidebar = ({ activeChatId, setActiveChatId, show, onHide }: SidebarProps) => {
     return (
         <Col lg={4} xl={3} xxl={2} id="chatTabs" role="tablist">
             <Card className="card-body border-bottom border-end rounded-0">
@@ -84,17 +86,10 @@ const Sidebar = ({ activeChatId, setActiveChatId }: SidebarProps) => {
                     </Dropdown>
                 </div>
             </Card>
-            <div className="offcanvas-lg offcanvas-start" tabIndex={-1} id="offcanvasNavbar">
-                <div className="offcanvas-header">
-                    <button
-                        type="button"
-                        className="btn-close text-reset ms-auto"
-                        data-bs-target="#offcanvasNavbar"
-                        data-bs-dismiss="offcanvas"
-                        aria-label="Close"
-                    ></button>
-                </div>
-                <div className="offcanvas-body flex-column p-0">
+            <Offcanvas show={show} onHide={onHide} placement="start" responsive="lg">
+                <OffcanvasHeader closeButton />
+
+                <OffcanvasBody className="flex-column p-0">
                     <div className="card card-body card-chat-list overflow-hidden rounded-0 border-end pb-3">
                         <form className="position-relative">
                             <input className="form-control py-2" type="search" placeholder="Search for chats" aria-label="Search" />
@@ -113,7 +108,14 @@ const Sidebar = ({ activeChatId, setActiveChatId }: SidebarProps) => {
                                                 id={`${chat.id}-tab`}
                                                 data-bs-toggle="pill"
                                                 role="tab"
-                                                onClick={e => { e.preventDefault(); setActiveChatId(chat.id); }}
+                                                onClick={e => {
+                                                    if (['chat-4', 'chat-5'].includes(chat.id)) {
+                                                        e.preventDefault();
+                                                    } else {
+                                                        e.preventDefault();
+                                                        setActiveChatId(chat.id);
+                                                    }
+                                                }}
                                             >
                                                 <div className="d-flex">
                                                     <div className={`flex-shrink-0 avatar avatar-sm me-2 ${chat.status ? `status-${chat.status}` : ''}`}>
@@ -137,9 +139,9 @@ const Sidebar = ({ activeChatId, setActiveChatId }: SidebarProps) => {
                             </Link>
                         </div>
                     </div>
-                </div>
-            </div>
-        </Col>
+                </OffcanvasBody>
+            </Offcanvas>
+        </Col >
     );
 };
 

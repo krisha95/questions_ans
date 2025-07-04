@@ -41,7 +41,7 @@ const Category = () => {
                             <div className="card hstack gap-3 p-3 h-100">
                                 <Image src={category.icon} className="h-100 w-40px" alt={category.title} />
                                 <h6 className="mb-0">
-                                    <Link href="/category-detail" className="stretched-link">
+                                    <Link href="/category/detail" className="stretched-link">
                                         {category.title}
                                     </Link>
                                 </h6>

@@ -68,17 +68,17 @@ const RightSide = () => {
 
                             <CardBody className="p-2">
                                 <div className="border-bottom pb-3 mb-3">
-                                    <h6 className="mb-2 fw-normal"><Link href="/answer-detail-minimal">What is the importance of customer feedback in business?</Link></h6>
+                                    <h6 className="mb-2 fw-normal"><Link href="/que-ans/detail-minimal">What is the importance of customer feedback in business?</Link></h6>
                                     <p className="small mb-0"><BsChatSquareDots className="fa-fw me-1" />05 Answers</p>
                                 </div>
 
                                 <div className="border-bottom pb-3 mb-3">
-                                    <h6 className="mb-2 fw-normal"><Link href="/answer-detail-minimal">Explain the concept of object-oriented programming (OOP).</Link></h6>
+                                    <h6 className="mb-2 fw-normal"><Link href="/que-ans/detail-minimal">Explain the concept of object-oriented programming (OOP).</Link></h6>
                                     <p className="small mb-0"><BsChatSquareDots className="fa-fw me-1" />08 Answers</p>
                                 </div>
 
                                 <div className="">
-                                    <h6 className="mb-2 fw-normal"><Link href="/answer-detail-minimal">How does digital marketing impact business growth?</Link></h6>
+                                    <h6 className="mb-2 fw-normal"><Link href="/que-ans/detail-minimal">How does digital marketing impact business growth?</Link></h6>
                                     <p className="small mb-0"><BsChatSquareDots className="fa-fw me-1" />11 Answers</p>
                                 </div>
                             </CardBody>

@@ -23,7 +23,7 @@ const QuestionsCards = () => {
             question: 'Explain the concept of artificial intelligence (AI)?',
             user: 'Larry Lawson',
             date: '07 Nov 2024',
-            Link: '/answer-detail-minimal',
+            Link: '/que-ans/detail-minimal',
             answers: 15,
             views: 102,
         },

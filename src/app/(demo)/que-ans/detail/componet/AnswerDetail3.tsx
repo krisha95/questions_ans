@@ -39,11 +39,14 @@ const AnswerDetail3 = () => {
                         simple as:</p>
 
                     <div className="d-grid">
-                        <pre>
-                            <code className="language-markup" data-lang="html">{`
-                                $ node-sass [options] &lt;input.scss&gt; [output.css]
-                                $ cat &lt;input.scss&gt; | node-sass &gt; output.css
-                            `}</code></pre>
+                        <pre style={{ backgroundColor: "#343a40" }}>
+                            <code className="language-markup" data-lang="html">
+                                {`
+             $ node-sass [options] &lt;input.scss&gt; [output.css]
+             $ cat &lt;input.scss&gt; | node-sass &gt; output.css
+                                `}
+                            </code>
+                        </pre>
                     </div>
 
 
